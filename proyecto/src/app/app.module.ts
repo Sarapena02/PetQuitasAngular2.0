@@ -1,5 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { HighchartsChartModule } from 'highcharts-angular';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatTableModule} from '@angular/material/table';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,6 +46,7 @@ import { Top3TratamientosComponent } from './Admin/infoDashboard/top3-tratamient
 import { TratamientosUltimoMesComponent } from './Admin/infoDashboard/tratamientos-ultimo-mes/tratamientos-ultimo-mes.component';
 import { VentasTotalesComponent } from './Admin/infoDashboard/ventas-totales/ventas-totales.component';
 import { VeterinariosActivosComponent } from './Admin/infoDashboard/veterinarios-activos/veterinarios-activos.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -72,7 +85,20 @@ import { VeterinariosActivosComponent } from './Admin/infoDashboard/veterinarios
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    MatToolbarModule,
+    HighchartsChartModule,
+    FlexLayoutModule,
+    MatTableModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
