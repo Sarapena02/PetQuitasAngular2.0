@@ -46,11 +46,20 @@ export class FormMascotaComponent {
   }
 
   filterClientes() {
-    const searchTerm = this.cedula.toLowerCase();
-    this.clientesList = this.clientesList.filter(cliente =>
-        cliente.cedula.toLowerCase().includes(searchTerm)
-    );
+    if (this.cedula && this.cedula.trim() !== '') {
+        const searchTerm = this.cedula.toLowerCase();
+        this.clienteService.findAll().subscribe((data) => {
+            this.clientesList = data.filter(cliente =>
+                cliente.cedula.toLowerCase().startsWith(searchTerm)
+            );
+        });
+    } else {
+        this.clienteService.findAll().subscribe((data) => {
+            this.clientesList = data;
+        });
+    }
 }
+
 
   ngOnInit(): void {
     //buscar todos los clientes
