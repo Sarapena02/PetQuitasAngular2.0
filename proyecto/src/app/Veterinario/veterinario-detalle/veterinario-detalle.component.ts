@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Veterinario } from '../veterinario';
 import { VeterinarioService } from 'src/app/Services/Veterinario/veterinario.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -8,27 +8,24 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './veterinario-detalle.component.html',
   styleUrls: ['./veterinario-detalle.component.css']
 })
-export class VeterinarioDetalleComponent {
+export class VeterinarioDetalleComponent implements OnInit {
+  @Input() veterinario!: Veterinario;
+  veterinarioId: number = 0; // Variable para almacenar el ID del veterinario
 
-  @Input()
-  veterinario!: Veterinario
-
-  //Inyeccion de dependecias
   constructor(
     private veterinarioService: VeterinarioService,
     private route: ActivatedRoute,
     private router: Router
-  ){}
+  ) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      const id = Number(params.get('id')); 
-      this.veterinarioService.findById(id).subscribe(
+      this.veterinarioId = Number(params.get('idVeterinario'));
+      this.veterinarioService.findById(this.veterinarioId).subscribe(
         (data) => {
-          this.veterinario = data
+          this.veterinario = data;
         }
-      )
-    })
+      );
+    });
   }
-
 }
