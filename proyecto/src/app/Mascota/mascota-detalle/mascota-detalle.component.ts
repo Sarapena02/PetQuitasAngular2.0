@@ -1,7 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { Mascota } from '../mascota';
 import { MascotaService } from 'src/app/services/mascota/mascota.service';
+import { TratamientoService } from 'src/app/Services/Tratamiento/tratamiento.service';
 import { ActivatedRoute } from '@angular/router';
+import { Tratamiento } from 'src/app/Tratamiento/tratamiento';
 
 @Component({
   selector: 'app-mascota-detalle',
@@ -11,12 +13,14 @@ import { ActivatedRoute } from '@angular/router';
 export class MascotaDetalleComponent {
 
   @Input()
-  mascota!: Mascota
+  mascota!: Mascota;
+  
+  tratamientos: Tratamiento[] = []; // Mantén una lista de tratamientos para mostrar los detalles
 
-  //Inyeccion de dependecias
   constructor(
     private mascotaService: MascotaService,
-    private route: ActivatedRoute,
+    private tratamientoService: TratamientoService,
+    private route: ActivatedRoute
   ){}
 
   ngOnInit(): void {
@@ -24,10 +28,20 @@ export class MascotaDetalleComponent {
       const id = Number(params.get('id')); 
       this.mascotaService.findById(id).subscribe(
         (data) => {
-          this.mascota = data
+          this.mascota = data;
+          
+          if (this.mascota && this.mascota.tratamientos && this.mascota.tratamientos.length > 0) {
+            // Si la mascota tiene tratamientos asociados, carga los detalles de cada tratamiento.
+            for (const tratamiento of this.mascota.tratamientos) {
+              this.tratamientoService.findById(tratamiento.id).subscribe(
+                (tratamientoData) => {
+                  this.tratamientos.push(tratamientoData);
+                }
+              );
+            }
+          }
         }
       )
-    })
+    });
   }
-
 }

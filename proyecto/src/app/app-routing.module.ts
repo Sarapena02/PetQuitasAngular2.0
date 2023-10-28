@@ -44,6 +44,7 @@ const routes: Routes = [
   { path: 'veterinario/find/:id', component: VeterinarioDetalleComponent },
   { path: 'tratamiento/add', component: FormTratamientoComponent },
   { path: 'tratamiento/all', component: TratamientoTableComponent },
+  { path: 'tratamiento/all/:idVeterinario', component: TratamientoTableComponent },
   { path: 'tratamiento/edit/:id', component: FormEditTratamientoComponent },
   { path: 'tratamiento/find/:id', component: TratamientoDetalleComponent },
   { path: '**', component: ErrorPageComponent }
