@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="login-container">
+      <form id="login-form-Cliente" class="login-form" (ngSubmit)="validarCedula()" #LoginClienteForm ="ngForm">
+        <h2>Iniciar Sesión</h2>
+        <label for="cedula">Cedula:</label>
+        <input type="text" id="cedulaCliente" name="cedula" required [(ngModel)]="cedulaLog" #cedulaInput="ngModel">
+        <button type="submit" class="login-button" [disabled]="!LoginClienteForm.form.valid">Ingresar</button>
+      </form>
+    </div>
+  </div>
+  

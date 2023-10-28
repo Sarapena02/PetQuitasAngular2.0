@@ -1,0 +1,43 @@
+<form class="small-form" [formGroup]="formVeterinario" (ngSubmit)="guardarVeterinario()">
+
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" required formControlName="nombre">
+    </div>
+
+    <div class="form-group">
+        <label for="raza">Cedula</label>
+        <input type="text" class="form-control" id="cedula" name="cedula" required formControlName="cedula">
+
+        <div *ngIf="formVeterinario.get('cedula')?.hasError('pattern')">
+            <p class="error-message">Solo se admiten numeros</p>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="edad">Contrasenia</label>
+        <input type="text" class="form-control" id="contrasenia" name="contrasenia" required formControlName="contrasenia">
+    </div>
+
+    <div class="form-group">
+        <label for="enfermedad">Especialidad</label>
+        <input type="text" class="form-control" id="especialidad" name="especialidad" required formControlName="especialidad">
+        
+        <div *ngIf="formVeterinario.get('especialidad')?.hasError('pattern')">
+            <p class="error-message">Solo se admiten letras</p>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="imagen">Imagen</label>
+        <input type="text" class="form-control" id="imagen" name="imagen" required formControlName="foto">
+
+        <div *ngIf="formVeterinario.get('foto')?.hasError('invalidUrl')">
+            <p class="error-message">URL invalido. Ingrese un URL valido</p>
+        </div>
+        </div>
+    
+        <button class="btn btn-primary" type="submit" [disabled]="!formVeterinario.valid">Agregar</button>
+</form>
+
+

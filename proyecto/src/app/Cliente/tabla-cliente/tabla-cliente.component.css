@@ -1,0 +1,73 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+/* Contenedor de la tabla */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;/* Establece el alto mínimo del contenedor principal al 100% del alto de la ventana */
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+/* Contenedor de la tabla */
+.table-container {
+    width: 80%;
+    height: 100%; /* Cambio importante para ocupar todo el espacio vertical disponible */
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Hace que este contenedor ocupe todo el espacio restante */
+    margin: 2rem auto; /* Añade un poco más de margen para separar del borde de la ventana */
+    padding: 2rem; /* Agrega relleno para separar el contenido del contenedor */
+    background-color: rgba(255, 255, 255, 0.9); /* Cambia el fondo a una versión más transparente */
+    border-radius: 10px; /* Agrega bordes redondeados al contenedor */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Tabla */
+.table {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    border-collapse: collapse;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    overflow: hidden;
+    table-layout: fixed;
+    transition: background-color 0.3s, transform 0.2s;
+    background-color:#e5dde6;
+}
+
+.table th, .table td {
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid #020202;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: background-color 0.3s;
+}
+
+.table th {
+    background-color: #c0a0c3;
+    font-weight: bold;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+.table tbody tr:nth-of-type(even) {
+    background-color: #dfcae1;
+    transition: background-color 0.3s;
+}
+
+.table tbody tr:nth-of-type(odd) {
+    background-color: #e5dde6;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #8f7193;
+    border: none;
+    margin: 1px;
+}

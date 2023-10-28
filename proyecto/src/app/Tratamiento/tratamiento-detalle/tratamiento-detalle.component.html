@@ -1,0 +1,26 @@
+
+<div class="mostrarTratamiento">
+    <ng-container *ngIf="tratamiento">
+<h1 class="tituloInfo">Informacion del tratamiento</h1>
+        <div class="top-section">
+        <div class= "tratamiento-details">
+            <div class="detail">
+                <p class="label"><strong>Fecha:</strong></p>
+                <p class="value">{{tratamiento.fecha}}</p>
+            </div>
+            <div class="detail">
+                <p class="label"><strong>Medicamento:</strong></p>
+                <p class="value">{{tratamiento.droga}}</p>
+            </div>
+            <div class="detail">
+                <p class="label"><strong>ID de Mascota:</strong></p>
+                <p class="value">{{tratamiento.mascota}}</p>
+            </div>
+            <div class="detail">
+                <p class="label"><strong>ID de Veterinario:</strong></p>
+                <p class="value">{{tratamiento.veterinario}}</p>
+            </div>
+        </div>   
+        </div>
+    </ng-container>
+</div>

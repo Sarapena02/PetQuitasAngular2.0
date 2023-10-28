@@ -1,0 +1,34 @@
+<form class="small-form" [formGroup]="formTratamiento" (ngSubmit)="guardarTratamiento()">
+
+    <div class="form-group">
+        <label for="fecha">Fecha:</label>
+        <input type="date" class="form-control" id="fecha" name="fecha" required  formControlName="fecha" [min]="minDate">
+    </div>
+
+    <div class="form-group">
+    <label for="droga">Medicamento:</label>
+    <select class="form-control" id="droga" name="droga" required formControlName="droga" [(ngModel)]="selectedDroga">
+        <option *ngFor="let droga of drogaList" [ngValue]="droga">{{droga.nombre}}</option>
+    </select>
+    </div>
+
+    <div class="form-group">
+    <label for="mascota">Mascota:</label>
+    <select class="form-control" id="mascota" name="mascota" required formControlName="mascota" [(ngModel)]="selectedMascota">
+        <option *ngFor="let mascota of mascotaList" [ngValue]="mascota">{{ mascota.nombre }}</option>
+    </select>
+    </div>
+
+    <div class="form-group">
+    <label for="veterinario">Veterinario:</label>
+    <select class="form-control" id="veterinario" name="veterinario" required formControlName="veterinario" [(ngModel)]="selectedVeterinario" >
+        <option *ngFor="let veterinario of veterinarioList" [ngValue]="veterinario">{{ veterinario.nombre }}</option>
+    </select>
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="!formTratamiento.valid">Guardar Tratamiento</button>
+
+    <div *ngIf="selectedDroga && selectedDroga.unidadesDisponibles === 0" class="error-message">
+        No hay unidades disponibles de esta droga.
+      </div>
+</form>

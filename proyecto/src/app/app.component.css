@@ -1,0 +1,33 @@
+/* Cambie el color del header y la fuente*/
+
+header {
+    background-color: #e5dde6;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 0; /* Empuja el logo hacia la izquierda */
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px; /* Ajusta el espacio entre la imagen y el título */
+}
+
+.logo h1 {
+    font-size: 24px; /* Ajusta el tamaño del título */
+    color: #333;
+    margin: 0; /* Elimina el margen superior e inferior del título */
+}
+
+
+
+
+
+

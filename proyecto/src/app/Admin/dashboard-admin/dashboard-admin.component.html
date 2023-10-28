@@ -1,0 +1,40 @@
+<div class="dashboard">
+    <div>
+      <h1></h1>
+    </div>
+    
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
+      <mat-card fxFlex="33">
+      <app-tratamientos-ultimo-mes [tratamientosUltimoMes]="tratamientosUltimoMes"></app-tratamientos-ultimo-mes>
+      </mat-card>
+    
+      <mat-card fxFlex="33">
+        <app-ventas-totales [ventasTotales]="ventasTotales"></app-ventas-totales>
+      </mat-card>
+    
+      <mat-card fxFlex="33">
+        <app-ganancias-totales [gananciasTotales]="gananciasTotales"></app-ganancias-totales>
+      </mat-card>
+    
+      <mat-card fxFlex="33" >
+        <app-top3-tratamientos></app-top3-tratamientos>
+      </mat-card>
+    
+    
+    </div>
+    
+    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px" class="chart-container" >
+      <mat-card fxFlex="50">
+        <app-mascotas-activas [activos]="mascotasactivas" [inactivos]="mascotasinactivas"></app-mascotas-activas>
+      </mat-card>
+      <mat-card fxFlex="50" fxLayoutGap="10px" class="chart-container">
+        <app-veterinarios-activos [activos]="veterinariosActivos" [inactivos]="veterinariosInactivos"></app-veterinarios-activos>
+      </mat-card>
+    </div>
+    
+    <div  class="chart-container">
+      <app-cantidad-tratamientos-tipo [drogasList]="drogasXtratamiento"></app-cantidad-tratamientos-tipo>
+    </div>
+    
+  </div>
+  

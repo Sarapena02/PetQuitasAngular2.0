@@ -1,0 +1,180 @@
+.small-form {
+    padding-top: 50px;
+    max-width: 400px; /* Cambia el ancho máximo del formulario según tus preferencias */
+    margin: 0 auto; /* Centra el formulario en la página */
+    margin-bottom: 50px;
+}
+
+.small-form .form-group {
+    margin-bottom: 20px; /* Reduzca el espacio entre los grupos de formulario */
+}
+
+.small-form label {
+    font-size: 16px; /* Reduzca el tamaño de la fuente de las etiquetas */
+}.small-form {
+    padding-top: 50px;
+    max-width: 400px; /* Cambia el ancho máximo del formulario según tus preferencias */
+    margin: 0 auto; /* Centra el formulario en la página */
+    margin-bottom: 50px;
+}
+
+.small-form .form-group {
+    margin-bottom: 20px; /* Reduzca el espacio entre los grupos de formulario */
+}
+
+.small-form label {
+    font-size: 16px; /* Reduzca el tamaño de la fuente de las etiquetas */
+}
+
+.small-form .form-control {
+    padding: 12px; /* Reduzca el relleno de los campos de entrada */
+    font-size: 14px; /* Reduzca el tamaño de la fuente de los campos de entrada */
+}
+
+.small-form .btn-primary {
+    padding: 12px 24px; /* Reduzca el relleno del botón */
+    font-size: 16px; /* Reduzca el tamaño de la fuente del botón */
+}
+
+.form-group {
+    margin-bottom: 40px;
+}
+
+label {
+    font-weight: bold;
+    color: black; /* Corregir el color */
+    font-size: 20px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.form-control {
+    border: 2px solid #8f7193;
+    border-radius: 20px;
+    padding: 18px;
+    width: 100%;
+    transition: border-color 0.3s;
+    font-size: 18px;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: #9c879e;
+    outline: none;
+    box-shadow: 0 0 12px rgba(156, 135, 158, 0.5);
+    background-color: #fff;
+}
+
+.btn-primary {
+    background-color: #8f7193;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    padding: 20px 40px;
+    font-size: 22px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #9c879e;
+}
+
+.error-message {
+    color: red; /* Cambia el color del mensaje de error */
+    font-size: 14px; /* Ajusta el tamaño de la fuente del mensaje de error */
+    margin-top: 5px; /* Espacio superior para separar el mensaje de error del campo */
+}
+
+
+.small-form .form-control {
+    padding: 12px; /* Reduzca el relleno de los campos de entrada */
+    font-size: 14px; /* Reduzca el tamaño de la fuente de los campos de entrada */
+}
+
+.small-form .btn-primary {
+    padding: 12px 24px; /* Reduzca el relleno del botón */
+    font-size: 16px; /* Reduzca el tamaño de la fuente del botón */
+}
+
+.form-group {
+    margin-bottom: 40px;
+}
+
+label {
+    font-weight: bold;
+    color: bla;
+    font-size: 20px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.form-control {
+    border: 2px solid #8f7193;
+    border-radius: 20px;
+    padding: 18px;
+    width: 100%;
+    transition: border-color 0.3s;
+    font-size: 18px;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: #9c879e;
+    outline: none;
+    box-shadow: 0 0 12px rgba(156, 135, 158, 0.5);
+    background-color: #fff;
+}
+
+.btn-primary {
+    background-color: #8f7193;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    padding: 20px 40px;
+    font-size: 22px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #9c879e;
+}
+
+/* Estilos para el elemento select */
+.small-form select {
+    border: 2px solid #8f7193;
+    border-radius: 20px;
+    padding: 18px;
+    width: 100%;
+    transition: border-color 0.3s;
+    font-size: 18px;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s;
+}
+
+.small-form select:focus {
+    border-color: #9c879e;
+    outline: none;
+    box-shadow: 0 0 12px rgba(156, 135, 158, 0.5);
+    background-color: #fff;
+}
+
+/* Estilos para las opciones dentro del select */
+.small-form select option {
+    font-size: 18px;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s;
+}
+
+/* Estilos para las opciones seleccionadas en el select */
+.small-form select option:checked {
+    background-color: #8f7193;
+    color: #fff;
+}

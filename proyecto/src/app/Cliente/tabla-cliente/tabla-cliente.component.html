@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <a [routerLink]="['/cliente/add']">
+          <button class="btn btn-primary" >
+            Agregar Cliente
+          </button>
+        </a>
+        <table id="mascotas-table" class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Celular</th>
+              <th scope="col">Correo</th>
+              <th scope="col">Cedula</th>
+              <th scope="col">Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let cliente of clientesList">
+                <td>{{cliente.nombre}}</td>
+                <td>{{cliente.celular}}</td>
+                <td>{{cliente.correo}}</td>
+                <td>{{cliente.cedula}}</td>
+                <td>
+                  <a [routerLink]="['/cliente/find', cliente.id]">
+                    <button class="btn btn-primary">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </a>
+                  <button class="btn btn-primary" (click)="eliminarCliente(cliente)">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                  <a [routerLink]="['/cliente/edit', cliente.id]">
+                    <button class="btn btn-primary">
+                      <i class="bi bi-pencil"></i>
+                    </button>
+                  </a>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+  

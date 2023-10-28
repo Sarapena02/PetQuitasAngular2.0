@@ -1,0 +1,53 @@
+<form class="small-form" [formGroup]="formMascota" (ngSubmit)="guardarMascota()">
+
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" required formControlName="nombre">
+    </div>
+
+    <div class="form-group">
+        <label for="raza">Raza</label>
+        <input type="text" class="form-control" id="raza" name="raza" required formControlName="raza">
+
+        <div *ngIf="formMascota.get('raza')?.hasError('pattern')">
+            <p class="error-message">Solo se admiten letras</p>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="edad">Edad</label>
+        <input type="number" class="form-control" id="edad" name="edad" required formControlName="edad">
+
+        <div *ngIf="formMascota.get('edad')?.hasError('pattern')">
+            <p class="error-message">Solo se admiten numeros</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="enfermedad">Enfermedad</label>
+        <input type="text" class="form-control" id="enfermedad" name="enfermedad" required formControlName="enfermedad">
+
+        <div *ngIf="formMascota.get('enfermedad')?.hasError('pattern')">
+            <p class="error-message">Solo se admiten letras</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="cliente">Cliente</label>
+        <select class="form-control" id="cliente" name="cliente" required formControlName="cliente" [(ngModel)]="selectedCliente">
+            <option *ngFor="let cliente of clientesList" [ngValue]="cliente">{{cliente.cedula}}</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="imagen">Imagen</label>
+        <input type="text" class="form-control" id="imagen" name="imagen" required formControlName="imagen">
+
+        <div *ngIf="formMascota.get('imagen')?.hasError('invalidUrl')">
+            <p class="error-message">URL invalido. Ingrese un URL valido</p>
+        </div>
+    </div>
+    
+        <button class="btn btn-primary" type="submit" [disabled]="!formMascota.valid">Agregar</button>
+</form>
+

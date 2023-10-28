@@ -1,0 +1,114 @@
+.mostrarMascota {
+    max-width: 800px;
+    margin: 70px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+body {
+    padding-bottom: 140px;
+    overflow: hidden;
+}
+
+
+.mostrarMascota:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.tituloInfo {
+    text-align: center;
+    color: white;
+    padding: 25px 0;
+    background-color: #8F7193;
+    margin: 0;
+    letter-spacing: 1.5px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.top-section {
+    display: flex;
+    padding: 30px;
+    align-items: center;
+}
+
+.pet-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #dfcae1;
+    margin-right: 25px;
+    transition: border 0.3s ease;
+}
+
+.mostrarMascota:hover .pet-image {
+    border: 6px solid #c0a0c3;
+}
+
+.pet-details {
+    flex-grow: 1;
+}
+
+.pet-details p {
+    font-size: 20px;
+    color: #333333;
+    margin: 8px 0;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+}
+
+.bottom-section {
+    padding: 20px 30px;
+    border-top: 2px dashed #dfcae1;
+}
+
+.bottom-section ul{
+    list-style: none;
+}
+
+.bottom-section p {
+    font-size: 18px;
+    color: var(--text-main);
+    margin: 12px 0;
+    padding-left: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.bottom-section p.label {
+    font-size: 18px;
+    color: var(--text-main);
+    margin: 12px 0;
+    padding-left: 15px;
+    border-left: 5px solid #dfcae1;
+    transition: border-color 0.3s ease;
+}
+
+.mostrarMascota:hover .bottom-section p {
+    border-color: #c0a0c3;
+}
+
+.detail {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.label {
+    flex: 0 0 100px;
+    margin-right: 10px;
+    text-align: right;
+    color: #c0a0c3;
+}
+
+.value {
+    flex-grow: 1;
+    border-bottom: 1px solid #c0a0c3;
+    padding-bottom: 2px;
+    color: #747474;
+}
