@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+        <a [routerLink]="['/tratamiento/add']">
+          <button class="btn btn-primary" >
+            Agregar tratamiento
+          </button>
+        </a>
+        <table id="tratamientos-table" class="table table-striped table-bordered">
+          <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">IDVeterinario</th>
+                <th scope="col">IDMascota</th>
+                <th scope="col">IDDroga</th>
+                <th scope="col">Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let tratamiento of tratamientosList">
+                <td>{{tratamiento.id}}</td>
+                <td>{{tratamiento.fecha}}</td>
+                <td>{{tratamiento.veterinario}}</td>
+                <td>{{tratamiento.mascota}}</td>
+                <td>{{tratamiento.droga}}</td>
+                <td>
+                  <a [routerLink]="['/tratamiento/find', tratamiento.id]">
+                    <button class="btn btn-primary">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </a>
+                  <button class="btn btn-primary" (click)="eliminarTratamiento(tratamiento)">   
+                    <i class="bi bi-trash"></i>
+                  </button>
+                  <a [routerLink]="['/tratamiento/edit', tratamiento.id]">
+                    <button class="btn btn-primary">
+                      <i class="bi bi-pencil"></i>
+                    </button>
+                  </a>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>

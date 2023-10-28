@@ -1,0 +1,218 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Estilos generales */
+body.body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    background-image: url('/assets/Imagenes/jack.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(123, 105, 167, 0.568); 
+    z-index: -1; 
+    filter: blur(5px); 
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.textoImagen{
+    color: white;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+
+.services {
+    text-align: center;
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.services-title {
+    font-size: 50px;
+    margin-bottom: 30px; /* Ajusta el espacio entre el título y los servicios */
+    color: #f5f5f5;
+    text-align: center;
+}
+
+.pacientes-title {
+    font-size: 50px;
+    margin-bottom: 30px; /* Ajusta el espacio entre el título y los servicios */
+    color: #f5f5f5;
+    text-align: center;
+}
+
+.service {
+    width: calc(25% - 20px);
+    margin: 0 10px;
+    padding: 20px;
+    background-color: #e5dde6;
+    border-radius: 5px;
+    text-align: center;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+}
+
+.service:hover {
+    transform: scale(1.05); /* Efecto de escala al pasar el cursor */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+    color: #8f7193; /* Color de los íconos */
+    margin-bottom: 10px;
+}
+
+.service h3 {
+    font-size: 24px; /* Tamaño de fuente para los títulos */
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.service p {
+    font-size: 24px; /* Tamaño de fuente para el texto */
+    color: #666;
+}
+
+#fotos{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#fotos h2{
+    text-align: center;
+    color: #f5f5f5;
+    font-size: 36px;
+}
+
+#fotos p{
+    text-align: center;
+    color: #f5f5f5;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Galeria de fotos */
+
+.galeria_contenedor{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.galeria{
+    display: flex;
+    width: 800px;
+    height: 430px;
+}
+.galeria img{
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5s ease;
+}
+
+.galeria img:hover{
+    cursor: crosshair;
+    width: 500px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+/* Sección de Contacto */
+.contact {
+    text-align: center;
+    padding: 5px 0;
+    background-color: #e5dde6;
+    color: #333;
+}
+
+.contact h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.contact ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact ul li {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.contact a {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: #8f7193;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.contact a:hover {
+    background-color: #333;
+}
+

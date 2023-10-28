@@ -1,1 +1,273 @@
-/* You can add global styles to this file, and also import other style files */
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #dfcae1;
+    color: #333;
+    background-position: center;
+    overflow: scroll;
+    position: relative;
+    background-size: cover;
+    
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Cambie los botones que teniamos por button y les puse otro estilo */
+.button {
+    border: 0;
+    background-image: linear-gradient(
+     150deg,
+     #8f7193,
+     #c0a0c3,
+     #9c879e);
+     border-radius: 8px;
+     color:#fff;
+     display: flex;
+     font-size: 18px;
+     padding: 4px;
+     cursor: pointer;
+     transition: .3s;
+     display:inline-flex;
+ }
+ .button span{
+     background-color: #8f7193;
+     padding: 16px 24px;
+     border-radius: 6px;
+     transition: .1s;
+ }
+ 
+ .button:hover {
+     background: none;
+     color: #53285a
+ }
+ .button:active{
+     transform: scale(0.3);
+ }
+ .buttonA {
+    border: 0;
+    background-image: linear-gradient(150deg, #8f7193, #c0a0c3, #9c879e);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 14px; /* Reducir el tamaño de la letra */
+    padding: 2px; /* Reducir el relleno del botón */
+    cursor: pointer;
+    transition: 0.3s;
+    display: inline-flex;
+}
+
+.buttonA span {
+    background-color: #8f7193;
+    padding: 10px 16px; /* Reducir el relleno del span */
+    border-radius: 6px;
+    transition: 0.1s;
+}
+
+.buttonA:hover {
+    background: none;
+    color: #53285a;
+}
+
+.buttonA:active {
+    transform: scale(0.9); /* Reducir el efecto de escala */
+}
+.buttonCA {
+    border: 0;
+    background-image: linear-gradient(150deg,
+    #767193,
+    #b2a0c3,
+    #91879e);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 14px; /* Reducir el tamaño de la letra */
+    padding: 2px; /* Reducir el relleno del botón */
+    cursor: pointer;
+    transition: 0.3s;
+    display: inline-flex;
+}
+
+.buttonCA span {
+    background-color: #7a7193;
+    padding: 10px 16px; /* Reducir el relleno del span */
+    border-radius: 6px;
+    transition: 0.1s;
+}
+
+.buttonCA:hover {
+    background: none;
+    color: #53285a;
+}
+
+.buttonCA:active {
+    transform: scale(0.9); /* Reducir el efecto de escala */
+}
+
+ .buttonC {
+    border: 0;
+    background-image: linear-gradient(
+     150deg,
+     #767193,
+     #b2a0c3,
+     #91879e);
+     border-radius: 8px;
+     color:#fff;
+     display: flex;
+     font-size: 18px;
+     padding: 4px;
+     cursor: pointer;
+     transition: .3s;
+     display:inline-flex;
+ }
+ .buttonC span{
+     background-color: #7a7193;
+     padding: 16px 24px;
+     border-radius: 6px;
+     transition: .1s;
+ }
+ 
+ .buttonC:hover {
+     background: none;
+     color: #53285a
+ }
+ .buttonC:active{
+     transform: scale(0.3);
+ }
+ 
+ 
+ /* Estilos para el dropdown */
+ .dropdown {
+     position: relative;
+     display: inline-block;
+ }
+ 
+ .dropdown-content {
+     display: none;
+     position: absolute;
+     background-color: #f9f9f9;
+     min-width: 160px;
+     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+     z-index: 1;
+     border-radius: 5px; /* Agregado para redondear los bordes del dropdown */
+ }
+ 
+ .dropdown-content a {
+     color: black;
+     padding: 10px 20px; /* Ajuste del padding para un espacio más cómodo */
+     text-decoration: none;
+     display: block;
+     transition: background-color 0.3s; /* Agregado para una transición suave */
+ }
+ 
+ .dropdown-content a:hover {
+     background-color: #e5e5e5; /* Cambio en el color de fondo al pasar el cursor */
+ }
+ 
+ /* Estilos para los botones dentro del dropdown */
+ .dropdown-content a[href^="/logInVet"],
+ .dropdown-content a[href^="/logInCliente"],
+ .dropdown-content a[href^="/logInAdmin"]{
+     background-color: #8f7193;
+     color: white;
+     transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+     padding: 10px 20px; /* Ajuste del padding para un espacio más cómodo */
+ }
+ 
+ /* Cambio de color al pasar el cursor por encima del botón */
+ .dropdown-content a[href^="/logInVet"]:hover,
+ .dropdown-content a[href^="/logInCliente"]:hover,
+ .dropdown-content a[href^="/logInAdmin"]:hover{
+     background-color: #53285a;
+     transform: scale(1.05); /* Cambio de escala al pasar el cursor */
+ }
+ 
+ .dropdown:hover .dropdown-content {
+     display: block;
+ }
+
+ 
+/* Estilos para el footer */
+.footer {
+    background-color: #8f7193;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.footer-logo a {
+    font-size: 24px;
+    color: #fff;
+    margin: 0;
+}
+
+.footer-info p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+/* Estilos para los íconos de redes sociales */
+.footer-social {
+    margin-top: 20px;
+    color:black
+}
+
+.social-icon {
+    font-size: 24px;
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #53285a;
+}
+
+
+

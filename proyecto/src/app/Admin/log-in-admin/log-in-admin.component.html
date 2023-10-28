@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="login-container">
+        <form id="login-form-admin" class="login-form" (ngSubmit)="validarAdmin()" #LoginAdminForm ="ngForm">
+
+            <h2>Iniciar Sesión</h2>
+            <label for="user">Cedula:</label>
+            <input type="text" id="userAdmin" name="user" required [(ngModel)]="usuario" #cedulaInput="ngModel" >
+
+            <label for="contraseña">Contraseña:</label>
+            <input type="password" id="password" name="contraseña" required  [(ngModel)]="password" #constraseñaInput="ngModel">
+            <button type="submit" class="login-button" [disabled]="!LoginAdminForm.form.valid">Ingresar</button>
+        </form>
+    </div>
+</div>

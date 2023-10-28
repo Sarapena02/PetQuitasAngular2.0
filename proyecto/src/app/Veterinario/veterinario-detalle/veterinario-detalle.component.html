@@ -1,0 +1,31 @@
+<body>
+    <div class="mostrarMascota">
+        <ng-container *ngIf="veterinario">
+    <h1 class="tituloInfo">Informacion del veterinario</h1>
+        <div class="top-section">
+            <img class="pet-image" [src]="veterinario.foto" alt="Imagen del veterinario">
+            <div class="pet-details">
+                <div class="detail">
+                    <p class="label"><strong>Nombre:</strong></p>
+                    <p class="value">{{veterinario.nombre}}</p>
+                </div>
+                <div class="detail">
+                    <p class="label"><strong>Cedula:</strong></p>
+                    <p class="value">{{veterinario.cedula}}</p>
+                </div>
+                <div class="detail">
+                    <p class="label"><strong>Contraseña:</strong></p>
+                    <p class="value">{{veterinario.contrasenia}}</p>
+                </div>
+                <div class="detail">
+                    <p class="label"><strong>Especialidad:</strong></p>
+                    <p class="value">{{veterinario.especialidad}}</p>
+                </div>          
+            </div>
+        </div>
+    </ng-container>
+    </div>
+    </body>
+    
+    
+    
