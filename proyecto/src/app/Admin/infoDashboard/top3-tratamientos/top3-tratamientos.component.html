@@ -1,1 +1,23 @@
-<p>top3-tratamientos works!</p>
+<div class="text">
+    <h4>Top 3 tratamientos</h4>
+   </div>
+   
+   <table  mat-table [dataSource]="drogasList" class="mat-elevation-z8" >
+   
+   
+       <ng-container matColumnDef="nombre">
+           <th mat-header-cell *matHeaderCellDef> Nombre </th>
+           <td mat-cell *matCellDef="let droga"> {{droga.nombre}} </td>
+       </ng-container>
+   
+       <ng-container matColumnDef="unidades">
+           <th mat-header-cell *matHeaderCellDef> Unidades </th>
+           <td mat-cell *matCellDef="let droga"> {{droga.unidadesVendidas}} </td>
+       </ng-container>
+   
+       <tr mat-header-row *matHeaderRowDef="displayedColumns" hidden></tr>
+       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+     </table>
+   
+   
+   

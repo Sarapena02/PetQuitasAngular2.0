@@ -1,1 +1,14 @@
-<p>log-in-veterinario works!</p>
+<div class="container">
+    <div class="login-container">
+        <form id="login-form-veterinario" class="login-form" (ngSubmit)="validarCedulayContrasenia()" #LoginVeterinarioForm ="ngForm">
+
+            <h2>Iniciar Sesión</h2>
+            <label for="cedula">Cedula:</label>
+            <input type="text" id="cedulaVeterianrio" name="cedula" required [(ngModel)]="cedulaLog" #cedulaInput="ngModel" >
+
+            <label for="contraseña">Contraseña:</label>
+            <input type="password" id="contraseña" name="contraseña" required  [(ngModel)]="contraseniaLog" #constraseñaInput="ngModel">
+            <button id="btonLoginVet" type="submit" class="login-button" >Ingresar</button>
+        </form>
+    </div>
+</div>

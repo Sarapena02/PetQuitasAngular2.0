@@ -1,21 +1,22 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { TratamientoTableComponent } from "./tratamiento-table.component";
 
-import { TratamientoTableComponent } from './tratamiento-table.component';
 
-describe('TratamientoTableComponent', () => {
-  let component: TratamientoTableComponent;
-  let fixture: ComponentFixture<TratamientoTableComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [TratamientoTableComponent]
+describe("TratamientoTableComponent", () => {
+    let component: TratamientoTableComponent;
+    let fixture: ComponentFixture<TratamientoTableComponent>;
+
+    beforeEach(async () => {
+        TestBed.configureTestingModule({
+            declarations: [TratamientoTableComponent]
+        });
+        fixture = TestBed.createComponent(TratamientoTableComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
     });
-    fixture = TestBed.createComponent(TratamientoTableComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it("should create", () => {
+        expect(component).toBeTruthy();
+    });
 });

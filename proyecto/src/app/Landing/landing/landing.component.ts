@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-landing',
@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./landing.component.css']
 })
 export class LandingComponent {
+
+  @Output()
+  addLandingEvent = new EventEmitter<String>();
+
+  ngOnInit(): void {
+    this.addLandingEvent.emit('');
+  }
+
 
 }

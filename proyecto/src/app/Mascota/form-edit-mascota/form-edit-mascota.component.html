@@ -1,1 +1,53 @@
-<p>form-edit-mascota works!</p>
+<form class="small-form" [formGroup]="mascotaForm" (ngSubmit)="editarMascota(mascotaForm)">
+
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" formControlName="nombre">
+    </div>
+
+    <div class="form-group">
+        <label for="raza">Raza</label>
+        <input type="text" class="form-control" id="raza" name="raza" formControlName="raza">
+
+        <div *ngIf="mascotaForm.get('raza')?.hasError('pattern')">
+            <p class="error-message">Solo se admiten letras</p>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="edad">Edad</label>
+        <input type="number" class="form-control" id="edad" name="edad" formControlName="edad">
+
+        <div *ngIf="mascotaForm.get('edad')?.hasError('pattern')">
+            <p class="error-message">Solo se admiten letras</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="enfermedad">Enfermedad</label>
+        <input type="text" class="form-control" id="enfermedad" name="enfermedad" formControlName="enfermedad">
+
+        <div *ngIf="mascotaForm.get('enfermedad')?.hasError('pattern')">
+            <p class="error-message">Solo se admiten letras</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="estado">Estado</label>
+        <select type="text" class="form-control" id="estado" name="estado" formControlName="estado">
+          <option value="Activo">Activo</option>
+          <option value="Inactivo">Inactivo</option>
+        </select>
+      </div>
+    
+    <div class="form-group">
+        <label for="imagen">Imagen</label>
+        <input type="text" class="form-control" id="imagen" name="imagen" required formControlName="imagen">
+
+        <div *ngIf="mascotaForm.get('imagen')?.hasError('invalidUrl')">
+            <p class="error-message">URL invalido. Ingrese un URL valido</p>
+        </div>
+        </div>
+    
+        <button type="submit" [disabled]="!mascotaForm.valid" class="btn btn-primary">Guardar</button>
+</form>

@@ -29,14 +29,14 @@ import { TratamientoTableComponent } from './Tratamiento/tratamiento-table/trata
 import { FormEditMascotaComponent } from './Mascota/form-edit-mascota/form-edit-mascota.component';
 import { FormMascotaComponent } from './Mascota/form-mascota/form-mascota.component';
 import { MascotaDetalleComponent } from './Mascota/mascota-detalle/mascota-detalle.component';
-import { TablaMascotaComponent } from './Mascota/tabla-mascota/tabla-mascota.component';
+import { TablaMascotasComponent } from './Mascota/tabla-mascotas/tabla-mascotas.component';
 import { ErrorPageComponent } from './Error/error-page/error-page.component';
-import { DrogaComponent } from './Droga/droga/droga.component';
+import { DrogaComponent } from './Droga/droga.component';
 import { ClienteDetalleComponent } from './Cliente/cliente-detalle/cliente-detalle.component';
-import { FormClienteComponent } from './Cliente/form-cliente/form-cliente.component';
+import { ClienteFormComponent } from './Cliente/form-cliente/cliente-form.component';
 import { FormEditClienteComponent } from './Cliente/form-edit-cliente/form-edit-cliente.component';
 import { LogInClienteComponent } from './Cliente/log-in-cliente/log-in-cliente.component';
-import { TablaClienteComponent } from './Cliente/tabla-cliente/tabla-cliente.component';
+import { ClienteTablaComponent } from './Cliente/tabla-cliente/tabla-cliente.component';
 import { DashboardAdminComponent } from './Admin/dashboard-admin/dashboard-admin.component';
 import { LogInAdminComponent } from './Admin/log-in-admin/log-in-admin.component';
 import { CantidadTratamientosTipoComponent } from './Admin/infoDashboard/cantidad-tratamientos-tipo/cantidad-tratamientos-tipo.component';
@@ -65,14 +65,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormEditMascotaComponent,
     FormMascotaComponent,
     MascotaDetalleComponent,
-    TablaMascotaComponent,
+    TablaMascotasComponent,
     ErrorPageComponent,
     DrogaComponent,
     ClienteDetalleComponent,
-    FormClienteComponent,
+    ClienteFormComponent,
     FormEditClienteComponent,
     LogInClienteComponent,
-    TablaClienteComponent,
+    ClienteTablaComponent,
     DashboardAdminComponent,
     LogInAdminComponent,
     CantidadTratamientosTipoComponent,
