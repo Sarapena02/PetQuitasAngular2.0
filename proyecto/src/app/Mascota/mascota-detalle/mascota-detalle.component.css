@@ -13,6 +13,23 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     transform: translateY(-5px);
 }
+.mostrarMascota button {
+    background-color: #8F7193;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-left: 3%;
+}
+
+.mostrarMascota button:hover {
+    background-color: #c0a0c3;
+    transform: translateY(-2px);
+}
+
 
 .tituloInfo {
     text-align: center;
