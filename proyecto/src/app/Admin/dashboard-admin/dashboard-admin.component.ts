@@ -2,7 +2,8 @@ import { Component, EventEmitter, Output, inject } from '@angular/core';
 import { DrogaService } from 'src/app/Services/Droga/droga.service';
 import { TratamientoService } from 'src/app/Services/Tratamiento/tratamiento.service';
 import { VeterinarioService } from 'src/app/Services/Veterinario/veterinario.service';
-import { MascotaService } from 'src/app/services/mascota/mascota.service';
+import { MascotaService } from '../../Services/Mascota/mascota.service';
+
 
 
 
@@ -12,12 +13,15 @@ import { MascotaService } from 'src/app/services/mascota/mascota.service';
   styleUrls: ['./dashboard-admin.component.css']
 })
 export class DashboardAdminComponent {
+  @Output()
+  addLandingEvent = new EventEmitter<String>();
+  
 
   @Output()
   addAdminloginEvent = new EventEmitter<String>();
 
   mascotasactivas!: number;
-  mascotasinactivas!: number;
+  mascotasinactivas!: number; 
 
   veterinariosInactivos!: number;
   veterinariosActivos!: number;
@@ -41,6 +45,7 @@ export class DashboardAdminComponent {
 
 
   ngOnInit(): void {
+    this.addLandingEvent.emit('');
     this.addAdminloginEvent.emit('admin');
 
     //Mascotas activas

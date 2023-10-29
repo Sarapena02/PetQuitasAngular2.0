@@ -44,24 +44,31 @@ export class AppComponent {
   }
 
   changeUserTypeLanding(elementRef: any) {
+    if (elementRef.addLandingEvent) {
     elementRef.addLandingEvent.subscribe(
       (data: string) => {
         this.userType = data;
         localStorage.setItem('userType', JSON.stringify(data));
       }
     )
+    }
   }
 
   changeUserTypeCliente(elementRef: any) {
+    if (elementRef.addClienteloginEvent) {
     elementRef.addClienteloginEvent.subscribe(
       (data: string) => {
-      this.userType = data; 
-      localStorage.setItem('userType', JSON.stringify(data));
+        if(data!== '') {
+          this.userType = data; 
+          localStorage.setItem('userType', JSON.stringify(data));
+        }
       }
     )
   }
+  }
 
   changeUserTypeVeterinario(elementRef: any) {
+    if(elementRef.addVeterianriologinEvent) {
     elementRef.addVeterianriologinEvent.subscribe(
       (data: string) => {
         this.userType = data;
@@ -69,9 +76,11 @@ export class AppComponent {
 
       }
     )
+    }
   }
 
   changeUserTypeAdmin(elementRef: any) {
+    if (elementRef.addAdminloginEvent) {
     elementRef.addAdminloginEvent.subscribe(
       (data: string) => {
         this.userType = data;
@@ -79,6 +88,7 @@ export class AppComponent {
 
       }
     )
+    }
   }
 
 }

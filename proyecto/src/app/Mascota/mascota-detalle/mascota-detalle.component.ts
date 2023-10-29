@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Mascota } from '../mascota';
-import { MascotaService } from 'src/app/services/mascota/mascota.service';
+import { MascotaService } from '../../Services/Mascota/mascota.service';
 import { TratamientoService } from 'src/app/Services/Tratamiento/tratamiento.service';
 import { ActivatedRoute } from '@angular/router';
 import { Tratamiento } from 'src/app/Tratamiento/tratamiento';

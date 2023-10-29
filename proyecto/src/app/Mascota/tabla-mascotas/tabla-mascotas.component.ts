@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Mascota } from '../mascota';
-import { MascotaService } from 'src/app/services/mascota/mascota.service';
+import { MascotaService } from '../../Services/Mascota/mascota.service';
 
 @Component({
   selector: 'app-tabla-mascotas',
@@ -8,7 +8,6 @@ import { MascotaService } from 'src/app/services/mascota/mascota.service';
   styleUrls: ['./tabla-mascotas.component.css']
 })
 export class TablaMascotasComponent {
-
   //atributos
   mascotasList!: Mascota[];
 

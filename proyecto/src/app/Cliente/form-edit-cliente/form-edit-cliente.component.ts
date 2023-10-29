@@ -63,7 +63,7 @@ export class FormEditClienteComponent {
         });
     }   
 
-    editarCliente(form:any){
+      editarCliente(form:any){
         //Primero realiza el update y una vez que el update se haya realizo entonces redirecciona a la tabla de clientes
         if(this.clienteForm.valid){            
             this.clienteService.update(this.clienteForm.value).pipe(
@@ -73,4 +73,5 @@ export class FormEditClienteComponent {
             ).subscribe();
         }
     }
+      
 }
