@@ -4,7 +4,7 @@
         <h2>Iniciar Sesión</h2>
         <label for="cedula">Cedula:</label>
         <input type="text" id="cedulaCliente" name="cedula" required [(ngModel)]="cedulaLog" #cedulaInput="ngModel">
-        <button type="submit" class="login-button" [disabled]="!LoginClienteForm.form.valid">Ingresar</button>
+        <button type="submit" id="loginCliente" class="login-button" [disabled]="!LoginClienteForm.form.valid">Ingresar</button>
       </form>
     </div>
   </div>

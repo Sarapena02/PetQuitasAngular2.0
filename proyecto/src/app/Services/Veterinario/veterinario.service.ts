@@ -15,6 +15,8 @@ export class VeterinarioService {
       cedula: cedulaLog,
       contrasenia: contrasenaLog
     };
+    console.log(body);
+    
     return this.http.post('http://localhost:8090/veterinarios/login', body);
   }
 
