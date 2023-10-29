@@ -29,6 +29,8 @@
             <p class="value">{{mascota.estado}}</p>
         </div>
     </div>
+    <button [routerLink]="['/cliente/find', mascota.id]">Ver Datos Cliente</button>
+    <button [routerLink]="['/mascota/findTratamientos/', mascota.id]">Ver Historial</button>
 </ng-container>
 </div>
 

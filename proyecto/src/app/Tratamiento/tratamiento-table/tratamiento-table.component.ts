@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TratamientoService } from 'src/app/Services/Tratamiento/tratamiento.service';
 import { Tratamiento } from '../tratamiento';
-
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-tratamiento-table',
@@ -9,26 +9,45 @@ import { Tratamiento } from '../tratamiento';
   styleUrls: ['./tratamiento-table.component.css']
 })
 export class TratamientoTableComponent {
-  
-
-  tratamientoList!: Tratamiento[];
+  tratamientoList: Tratamiento[] = [];
+  idVeterinario!: number;
 
   constructor(
-    private tratamientoService: TratamientoService
-  ){}
-
-
-
-  ngOnInit(): void {
-    this.tratamientoService.findAll().subscribe(
-      data =>
-        this.tratamientoList = data
-    )
+    private tratamientoService: TratamientoService,
+  ) {
+    this.idVeterinario = localStorage.getItem('idVeterinario') ? Number(localStorage.getItem('idVeterinario')) : 0;
   }
 
-  eliminarTratamiento(tratamiento: Tratamiento){
-    var index = this.tratamientoList.indexOf(tratamiento);
-    this.tratamientoList.splice(index, 1);
-    this.tratamientoService.deleteById(tratamiento.id);
+  ngOnInit(): void {        
+    this.tratamientoService.getTratamientoXveterinario(this.idVeterinario).subscribe(data => {
+      // Filtra los tratamientos por el ID del veterinario
+      this.tratamientoList = data;
+      console.log(this.tratamientoList);
+    });
   }
+  agregarTratamiento(nuevoTratamiento: Tratamiento) {
+    this.tratamientoService.addTratamiento(nuevoTratamiento).subscribe(
+        (tratamientoAgregado) => {
+            this.tratamientoList.push(tratamientoAgregado); // Agrega el tratamiento a la lista
+        },
+        (error) => {
+            console.error('Error al agregar tratamiento:', error);
+        }
+    );
+}
+eliminarTratamiento(tratamiento: Tratamiento) {
+  this.tratamientoService.deleteById(tratamiento.id).subscribe(
+      () => {
+          // Elimina el tratamiento de la lista
+          const index = this.tratamientoList.indexOf(tratamiento);
+          if (index !== -1) {
+              this.tratamientoList.splice(index, 1);
+          }
+      },
+      (error) => {
+          console.error('Error al eliminar tratamiento:', error);
+      }
+  );
+}
+
 }

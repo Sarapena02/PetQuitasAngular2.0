@@ -12,7 +12,6 @@ import { FormMascotaComponent } from './Mascota/form-mascota/form-mascota.compon
 import { MascotaDetalleComponent } from './Mascota/mascota-detalle/mascota-detalle.component';
 import { FormEditTratamientoComponent } from './Tratamiento/form-edit-tratamiento/form-edit-tratamiento.component';
 import { FormTratamientoComponent } from './Tratamiento/form-tratamiento/form-tratamiento.component';
-import { TratamientoAllComponent } from './Tratamiento/tratamiento-all/tratamiento-all.component';
 import { TratamientoDetalleComponent } from './Tratamiento/tratamiento-detalle/tratamiento-detalle.component';
 import { FormEditVeterinarioComponent } from './Veterinario/form-edit-veterinario/form-edit-veterinario.component';
 import { FormVeterinarioComponent } from './Veterinario/form-veterinario/form-veterinario.component';
@@ -22,6 +21,8 @@ import { VeterinarioTableComponent } from './Veterinario/veterinario-table/veter
 import { TablaMascotasComponent } from './Mascota/tabla-mascotas/tabla-mascotas.component';
 import { ClienteFormComponent } from './Cliente/form-cliente/cliente-form.component';
 import { ClienteTablaComponent } from './Cliente/tabla-cliente/tabla-cliente.component';
+import { TratamientoTableComponent } from './Tratamiento/tratamiento-table/tratamiento-table.component';
+import { TratamientosMascotaTableComponent } from './Tratamiento/tratamientos-mascota-table/tratamientos-mascota-table.component';
 
 const routes: Routes = [
   { path: 'mascota/find/:id', component: MascotaDetalleComponent },
@@ -43,9 +44,10 @@ const routes: Routes = [
   { path: 'veterinario/edit/:id', component: FormEditVeterinarioComponent },
   { path: 'veterinario/find/:id', component: VeterinarioDetalleComponent },
   { path: 'tratamiento/add', component: FormTratamientoComponent },
-  { path: 'tratamiento/all', component: TratamientoAllComponent },
+  { path: 'tratamiento/all', component: TratamientoTableComponent },
   { path: 'tratamiento/edit/:id', component: FormEditTratamientoComponent },
   { path: 'tratamiento/find/:id', component: TratamientoDetalleComponent },
+  { path: 'mascota/findTratamientos/:id', component: TratamientosMascotaTableComponent},
   { path: '**', component: ErrorPageComponent }
 ];
 

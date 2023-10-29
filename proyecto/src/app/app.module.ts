@@ -11,8 +11,6 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatTableModule} from '@angular/material/table';
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingComponent } from './Landing/landing/landing.component';
@@ -23,7 +21,6 @@ import { VeterinarioDetalleComponent } from './Veterinario/veterinario-detalle/v
 import { VeterinarioTableComponent } from './Veterinario/veterinario-table/veterinario-table.component';
 import { FormEditTratamientoComponent } from './Tratamiento/form-edit-tratamiento/form-edit-tratamiento.component';
 import { FormTratamientoComponent } from './Tratamiento/form-tratamiento/form-tratamiento.component';
-import { TratamientoAllComponent } from './Tratamiento/tratamiento-all/tratamiento-all.component';
 import { TratamientoDetalleComponent } from './Tratamiento/tratamiento-detalle/tratamiento-detalle.component';
 import { TratamientoTableComponent } from './Tratamiento/tratamiento-table/tratamiento-table.component';
 import { FormEditMascotaComponent } from './Mascota/form-edit-mascota/form-edit-mascota.component';
@@ -47,6 +44,7 @@ import { TratamientosUltimoMesComponent } from './Admin/infoDashboard/tratamient
 import { VentasTotalesComponent } from './Admin/infoDashboard/ventas-totales/ventas-totales.component';
 import { VeterinariosActivosComponent } from './Admin/infoDashboard/veterinarios-activos/veterinarios-activos.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TratamientosMascotaTableComponent } from './Tratamiento/tratamientos-mascota-table/tratamientos-mascota-table.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +57,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     VeterinarioTableComponent,
     FormEditTratamientoComponent,
     FormTratamientoComponent,
-    TratamientoAllComponent,
     TratamientoDetalleComponent,
     TratamientoTableComponent,
     FormEditMascotaComponent,
@@ -81,7 +78,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     Top3TratamientosComponent,
     TratamientosUltimoMesComponent,
     VentasTotalesComponent,
-    VeterinariosActivosComponent
+    VeterinariosActivosComponent,
+    TratamientoTableComponent,
+    TratamientosMascotaTableComponent
   ],
   imports: [
     BrowserModule,
