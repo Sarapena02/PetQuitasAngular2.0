@@ -13,6 +13,9 @@ export class TablaMascotasComponent {
 
   mascotaEditar!: Mascota;
 
+  filtroNombre: string = '';
+
+
   //constructor
   constructor(
     private mascotaService: MascotaService
@@ -27,7 +30,20 @@ export class TablaMascotasComponent {
     )
   }
 
+
   //metodos
+  buscarMascotas() {
+    if (this.filtroNombre) {
+      this.mascotasList = this.mascotasList.filter(mascota => {
+        return mascota.nombre.toLowerCase().includes(this.filtroNombre.toLowerCase());
+      });
+    } else {
+      // Si el campo de búsqueda está vacío, restaura la lista original.
+      this.mascotaService.findAll().subscribe(
+        data => this.mascotasList = data
+      );
+    }
+  }
 
   //busca el id de la mascota y la elimina
   eliminarMascota(mascota: Mascota){
