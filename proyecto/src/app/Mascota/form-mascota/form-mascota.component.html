@@ -34,10 +34,10 @@
 
     <div class="form-group">
         <label for="cliente">Cliente</label>
-        <input list="clientes" class="form-control" id="cliente" name="cliente" required formControlName="cliente" [(ngModel)]="cedula" (input)="filterClientes()">
+        <input list="clientes" class="form-control" id="cliente" name="cliente" [(ngModel)]="selectedCliente" required formControlName="cliente" (input)="filterClientes()">
         <datalist id="clientes">
-            <option *ngFor="let cliente of clientesList" [value]="cliente.cedula">
-                {{cliente.nombre}} - {{cliente.cedula}}
+            <option *ngFor="let cliente of clientesList" [ngValue]="cliente">
+                {{cliente.cedula}}
             </option>
         </datalist>
     </div>

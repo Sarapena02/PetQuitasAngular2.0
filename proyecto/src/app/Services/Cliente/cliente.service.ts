@@ -44,6 +44,10 @@ findCliente(id:number):Observable<Cliente>{
 findMascotas(id:number):Observable<Mascota[]>{
   return this.http.get<Mascota[]>(`http://localhost:8090/clientes/mascotas/` + id);
 }
+
+findByCedula(cedula:string):Observable<Cliente>{
+  return this.http.get<Cliente>(`http://localhost:8090/clientes/cedula/` + cedula);
+}
   
 
 }
