@@ -55,6 +55,18 @@ export class FormTratamientoComponent {
   }
 
   ngOnInit(): void {
+    //buscar todas las drogas
+    this.drogaService.findAll().subscribe(
+      (data) => {
+        this.drogaList = data
+      }
+    )
+    //buscar todas las mascotas
+    this.mascotaService.findAll().subscribe(
+      (data) => {
+        this.mascotaList = data
+      }
+    )
     //asigna el veterinario con sesion iniciada
     this.VeterinarioService.findById(this.idVeterinario).subscribe(
       (data) => {
