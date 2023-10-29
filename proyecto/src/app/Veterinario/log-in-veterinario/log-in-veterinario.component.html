@@ -1,6 +1,6 @@
 <div class="container">
     <div class="login-container">
-        <form id="login-form-veterinario" class="login-form" (ngSubmit)="validarCedulayContrasenia()" #LoginVeterinarioForm ="ngForm">
+        <form id="login-form-veterinario" class="login-form"(ngSubmit)="validarCedulayContrasenia()" #LoginVeterinarioForm="ngForm">
 
             <h2>Iniciar Sesión</h2>
             <label for="cedula">Cedula:</label>
@@ -8,7 +8,10 @@
 
             <label for="contraseña">Contraseña:</label>
             <input type="password" id="contraseña" name="contraseña" required  [(ngModel)]="contraseniaLog" #constraseñaInput="ngModel">
+
+
             <button id="btonLoginVet" type="submit" class="login-button" >Ingresar</button>
+            <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
         </form>
     </div>
 </div>

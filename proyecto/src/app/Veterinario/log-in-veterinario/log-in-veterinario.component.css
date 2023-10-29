@@ -50,3 +50,8 @@
 .login-button:hover {
     background-color: #555;
 }
+.error-message {
+    color: red; /* Cambia el color del mensaje de error */
+    font-size: 14px; /* Ajusta el tamaño de la fuente del mensaje de error */
+    margin-top: 5px; /* Espacio superior para separar el mensaje de error del campo */
+}
