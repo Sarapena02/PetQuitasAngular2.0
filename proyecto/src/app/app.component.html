@@ -1,58 +1,59 @@
 <header>
-  <div class="logo">
-      <img src="favicon.ico" alt="Logo de la veterinaria">
-      <h1>Veterinaria PetQuitas</h1>
-  </div>
-  <nav>
-      <ul [ngSwitch]="userType">
-          <ng-container *ngSwitchCase="''">
-              <li><a class="button" href="/"><span>Inicio</span></a></li>
-              <li><a class="button" href="/#servicios"><span>Servicios</span></a></li>
-              <li><a class="button" href="/#contacto"><span>Contacto</span></a></li>
-              <li class="dropdown">
-                  <a class="button"><span>Log In &#9662;</span></a>
-                  <div class="dropdown-content">
-                      <a id="botonVet" [routerLink]="['/logInVet']">Ingresar como veterinario</a>
-                      <a id="botonCliente" [routerLink]="['/logInCliente']">Ingresar como cliente</a>
-                      <a id="botonAdmin" [routerLink]="['/logInAdmin']">Ingresar como administrador</a>
-                  </div>
-              </li>
-          </ng-container>
-          <ng-container *ngSwitchCase="'admin'">
-              <li><a class="buttonA" href="/admin/dashboard"><span>Dashboard</span></a></li>
-              <li><a class="buttonA" href="/mascota/add"><span>Registrar mascota</span></a></li>
-              <li><a class="buttonA" href="/veterinario/add"><span>Registrar veterinario</span></a></li>
-              <li><a class="buttonA" href="/tratamiento/add"><span>Dar tratamiento</span></a></li>
-              <li><a class="buttonA" href="/tratamiento/all"><span>Ver historial </span></a></li>
-              <li><a class="buttonA" href="/mascotas/all"><span>Ver mascotas</span></a></li>
-              <li><a class="buttonA" href="/veterinarios/all"><span>Ver veterinarios</span></a></li>
-              <li><a class="buttonA" href="/clientes/all"><span>Ver clientes</span></a></li>
-              <li><a class="buttonCA" href="/"><span>Cerrar sesion</span></a></li>
-          </ng-container>
-          <ng-container *ngSwitchCase="'veterinario'">
-              <li><a class="button" href="/mascota/add"><span>Registrar mascota</span></a></li>
-              <li><a class="button" href="/tratamiento/add"><span>Dar tratamiento</span></a></li>
-              <li><a class="button" [routerLink]="['/tratamiento/all']"><span>Ver historial </span></a></li>
-              <li><a class="button" href="/mascotas/all"><span>Ver mascotas</span></a></li>
-              <li><a class="button" href="/clientes/all"><span>Ver clientes</span></a></li>
-              <li><a class="buttonC" href="/"><span>Cerrar sesion</span></a></li>
-          </ng-container>
-          <ng-container *ngSwitchCase="'cliente'">
-              <!--<li><a class="button" href=""><span>Ver historial </span></a></li> -->
-              <li><a class="button" href="HACERLO"><span>Ver mascotas</span></a></li>
-              <li><a class="button" href="/"><span>Cerrar sesion</span></a></li>
-              <li><a class="buttonC" href="/"><span>Cerrar sesion</span></a></li>
-          </ng-container>
-      </ul>
-  </nav>
-</header>
-
-  <main>
-  <router-outlet (activate)="changeUserTypeLanding($event)" (activate)="changeUserTypeVeterinario($event)" (activate)="changeUserTypeCliente($event)" (activate)="changeUserTypeAdmin($event)"> </router-outlet>
-
+    <div class="logo">
+        <img src="favicon.ico" alt="Logo de la veterinaria">
+        <h1>Veterinaria PetQuitas</h1>
+    </div>
+    <nav>
+        <ul [ngSwitch]="userType">
+            <ng-container *ngSwitchCase="''">
+                <li><a class="button" href="/"><span>Inicio</span></a></li>
+                <li><a class="button" href="/#servicios"><span>Servicios</span></a></li>
+                <li><a class="button" href="/#contacto"><span>Contacto</span></a></li>
+                <li class="dropdown">
+                    <a class="button"><span>Log In &#9662;</span></a>
+                    <div class="dropdown-content">
+                        <a id="botonVet" [routerLink]="['/logInVet']">Ingresar como veterinario</a>
+                        <a id="botonCliente" [routerLink]="['/logInCliente']">Ingresar como cliente</a>
+                        <a id="botonAdmin" [routerLink]="['/logInAdmin']">Ingresar como administrador</a>
+                    </div>
+                </li>
+            </ng-container>
+            <ng-container *ngSwitchCase="'admin'">
+                <li><a class="buttonA" href="/admin/dashboard"><span>Dashboard</span></a></li>
+                <li><a class="buttonA" href="/mascota/add"><span>Registrar mascota</span></a></li>
+                <li><a class="buttonA" href="/veterinario/add"><span>Registrar veterinario</span></a></li>
+                <li><a class="buttonA" href="/tratamiento/add"><span>Dar tratamiento</span></a></li>
+                <li><a class="buttonA" href="/tratamiento/all"><span>Ver historial </span></a></li>
+                <li><a class="buttonA" href="/mascotas/all"><span>Ver mascotas</span></a></li>
+                <li><a class="buttonA" href="/veterinarios/all"><span>Ver veterinarios</span></a></li>
+                <li><a class="buttonA" href="/clientes/all"><span>Ver clientes</span></a></li>
+                <li><a class="buttonCA" href="/"><span>Cerrar sesion</span></a></li>
+            </ng-container>
+            <ng-container *ngSwitchCase="'veterinario'">
+                <li><a class="button" href="/mascota/add"><span>Registrar mascota</span></a></li>
+                <li><a class="button" href="/tratamiento/add"><span>Dar tratamiento</span></a></li>
+                <li><a class="button" [routerLink]="['/tratamiento/all']"><span>Ver historial </span></a></li>
+                <li><a class="button" href="/mascotas/all"><span>Ver mascotas</span></a></li>
+                <li><a class="button" href="/clientes/all"><span>Ver clientes</span></a></li>
+                <li><a class="buttonC" href="/"><span>Cerrar sesion</span></a></li>
+            </ng-container>
+            <ng-container *ngSwitchCase="'cliente'">
+                <!--<li><a class="button" href=""><span>Ver historial </span></a></li> -->
+                <li><a class="button" href="HACERLO"><span>Ver mascotas</span></a></li>
+                <li><a class="button" href="/"><span>Cerrar sesion</span></a></li>
+                <li><a class="buttonC" href="/"><span>Cerrar sesion</span></a></li>
+            </ng-container>
+        </ul>
+    </nav>
+  </header>
   
-</main>
-
-
-
-
+    <main>
+    <router-outlet (activate)="changeUserTypeLanding($event)" (activate)="changeUserTypeVeterinario($event)" (activate)="changeUserTypeCliente($event)" (activate)="changeUserTypeAdmin($event)"> </router-outlet>
+  
+    
+  </main>
+  
+  
+  
+  
+  
