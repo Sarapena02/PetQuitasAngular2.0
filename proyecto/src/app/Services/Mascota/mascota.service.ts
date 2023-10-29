@@ -48,4 +48,8 @@ export class MascotaService {
   findAllInactivos(): Observable<number>{
     return this.http.get<number>('http://localhost:8090/mascotas/cantidad/inactivos');
   }
+
+  findByName(name: string): Observable<Mascota>{
+    return this.http.get<Mascota>("http://localhost:8090/mascotas/findByName/" + name);
+  }
 }
