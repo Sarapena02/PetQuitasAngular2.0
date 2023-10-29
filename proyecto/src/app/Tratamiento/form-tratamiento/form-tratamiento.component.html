@@ -9,7 +9,7 @@
         <label for="droga">Medicamento:</label>
         <input list="drogas" class="form-control" id="droga" name="droga" required formControlName="droga" [(ngModel)]="selectedDroga">
         <datalist id="drogas">
-            <option *ngFor="let droga of drogaList" [value]="droga.nombre">{{droga.nombre}}</option>
+            <option *ngFor="let droga of drogaList" [ngValue]="droga.nombre">{{droga.nombre}}</option>
         </datalist>
     </div>
     
@@ -18,12 +18,12 @@
         <label for="mascota">Mascota:</label>
         <input list="mascotas" class="form-control" id="mascota" name="mascota" required formControlName="mascota" [(ngModel)]="selectedMascota">
         <datalist id="mascotas">
-            <option *ngFor="let mascota of mascotaList" [value]="mascota.nombre">{{ mascota.nombre }}</option>
+            <option *ngFor="let mascota of mascotaList" [ngValue]="mascota">{{ mascota.nombre }}</option>
         </datalist>
     </div>
     
 
-    <button class="btn btn-primary" type="submit" [disabled]="!formTratamiento.valid">Guardar Tratamiento</button>
+    <button class="btn btn-primary" type="submit" >Guardar Tratamiento</button>
 
     <div *ngIf="selectedDroga && selectedDroga.unidadesDisponibles === 0" class="error-message">
         No hay unidades disponibles de esta droga.

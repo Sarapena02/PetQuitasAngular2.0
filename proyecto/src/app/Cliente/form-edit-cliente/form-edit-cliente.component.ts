@@ -65,7 +65,9 @@ export class FormEditClienteComponent {
 
     editarCliente(form:any){
         //Primero realiza el update y una vez que el update se haya realizo entonces redirecciona a la tabla de clientes
-        if(this.clienteForm.valid){            
+        if(this.clienteForm.valid){          
+            console.log(this.clienteForm.value);
+              
             this.clienteService.update(this.clienteForm.value).pipe(
                 switchMap(() => {
                     return this.router.navigate(['/clientes/all']);
