@@ -22,6 +22,7 @@ import { TablaMascotasComponent } from './Mascota/tabla-mascotas/tabla-mascotas.
 import { ClienteFormComponent } from './Cliente/form-cliente/cliente-form.component';
 import { ClienteTablaComponent } from './Cliente/tabla-cliente/tabla-cliente.component';
 import { TratamientoTableComponent } from './Tratamiento/tratamiento-table/tratamiento-table.component';
+import { TratamientosMascotaTableComponent } from './Tratamiento/tratamientos-mascota-table/tratamientos-mascota-table.component';
 
 const routes: Routes = [
   { path: 'mascota/find/:id', component: MascotaDetalleComponent },
@@ -46,6 +47,7 @@ const routes: Routes = [
   { path: 'tratamiento/all', component: TratamientoTableComponent },
   { path: 'tratamiento/edit/:id', component: FormEditTratamientoComponent },
   { path: 'tratamiento/find/:id', component: TratamientoDetalleComponent },
+  { path: 'mascota/findTratamientos/:id', component: TratamientosMascotaTableComponent},
   { path: '**', component: ErrorPageComponent }
 ];
 

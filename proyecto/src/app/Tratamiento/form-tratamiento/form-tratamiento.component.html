@@ -19,13 +19,6 @@
     </select>
     </div>
 
-    <div class="form-group">
-    <label for="veterinario">Veterinario:</label>
-    <select class="form-control" id="veterinario" name="veterinario" required formControlName="veterinario" [(ngModel)]="selectedVeterinario" >
-        <option *ngFor="let veterinario of veterinarioList" [ngValue]="veterinario">{{ veterinario.nombre }}</option>
-    </select>
-    </div>
-
     <button class="btn btn-primary" type="submit" [disabled]="!formTratamiento.valid">Guardar Tratamiento</button>
 
     <div *ngIf="selectedDroga && selectedDroga.unidadesDisponibles === 0" class="error-message">
