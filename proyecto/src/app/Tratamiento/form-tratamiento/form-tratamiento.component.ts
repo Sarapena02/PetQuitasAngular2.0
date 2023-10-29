@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Droga } from 'src/app/Droga/droga';
 import { Mascota } from 'src/app/Mascota/mascota';
 import { DrogaService } from 'src/app/Services/Droga/droga.service';
-import { MascotaService } from 'src/app/services/mascota/mascota.service';
+import { MascotaService } from '../../Services/Mascota/mascota.service';
 import { TratamientoService } from 'src/app/Services/Tratamiento/tratamiento.service';
 import { Veterinario } from 'src/app/Veterinario/veterinario';
 import { Tratamiento } from '../tratamiento';

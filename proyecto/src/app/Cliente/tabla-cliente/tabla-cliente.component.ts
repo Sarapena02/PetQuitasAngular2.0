@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import { Cliente } from 'src/app/Cliente/cliente';
 import { ClienteService } from 'src/app/Services/Cliente/cliente.service';
 import { Router } from '@angular/router';
@@ -26,8 +26,6 @@ export class ClienteTablaComponent {
                 this.clientesList = data
         )
     }
-
-
 
     eliminarCliente(cliente: Cliente){
         var index = this.clientesList.indexOf(cliente);
