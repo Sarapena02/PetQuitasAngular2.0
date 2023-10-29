@@ -10,6 +10,28 @@
     margin-bottom: 60px;
     padding-bottom: 120px;
 }
+/* Estilos para la barra de búsqueda */
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra horizontalmente el contenido */
+    margin-bottom: 20px; /* Añade margen inferior para separar del botón "Agregar Mascota" */
+  }
+  
+  .form-control {
+    flex: 1;
+    max-width: 200px; /* Establece un ancho máximo para el campo de entrada */
+    margin-right: 10px;
+  }
+  
+  /* Estilo para el botón de búsqueda */
+  .btn-primary.search-button {
+    background-color: #8f7193;
+    border: none;
+    color: #fff;
+  }
+  
+  
 
 /* Contenedor de la tabla */
 .table-container {
