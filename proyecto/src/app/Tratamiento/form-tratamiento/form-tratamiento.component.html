@@ -9,7 +9,7 @@
         <label for="droga">Medicamento:</label>
         <input list="drogas" class="form-control" id="droga" name="droga" required formControlName="droga" [(ngModel)]="selectedDroga">
         <datalist id="drogas">
-            <option *ngFor="let droga of drogaList" [ngValue]="droga.nombre">{{droga.nombre}}</option>
+            <option *ngFor="let droga of drogaList" [ngValue]="droga">{{droga.nombre}}</option>
         </datalist>
     </div>
     
