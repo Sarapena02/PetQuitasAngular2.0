@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { ClienteService } from 'src/app/services/Cliente/cliente.service';
+import { ClienteService } from 'src/app/Services/Cliente/cliente.service';
 import { Cliente } from 'src/app/Cliente/cliente';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
