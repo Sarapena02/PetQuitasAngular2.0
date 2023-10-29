@@ -60,7 +60,7 @@ export class AppComponent {
       (data: string) => {
         if(data!== '') {
           this.userType = data; 
-          localStorage.setItem('userType', JSON.stringify(data));
+          localStorage.setItem('userType', JSON.stringify(data)); 
         }
       }
     )
