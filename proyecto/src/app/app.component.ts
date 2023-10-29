@@ -46,7 +46,7 @@ export class AppComponent {
   changeUserTypeLanding(elementRef: any) {
     if (elementRef.addLandingEvent) {
     elementRef.addLandingEvent.subscribe(
-      (data: string) => {
+      (data: string) => { 
         this.userType = data;
         localStorage.setItem('userType', JSON.stringify(data));
       }
@@ -57,7 +57,7 @@ export class AppComponent {
   changeUserTypeCliente(elementRef: any) {
     if (elementRef.addClienteloginEvent) {
     elementRef.addClienteloginEvent.subscribe(
-      (data: string) => {
+      (data: string) => { 
         if(data!== '') {
           this.userType = data; 
           localStorage.setItem('userType', JSON.stringify(data)); 
@@ -70,7 +70,7 @@ export class AppComponent {
   changeUserTypeVeterinario(elementRef: any) {
     if(elementRef.addVeterianriologinEvent) {
     elementRef.addVeterianriologinEvent.subscribe(
-      (data: string) => {
+      (data: string) => { 
         this.userType = data;
         localStorage.setItem('userType', JSON.stringify(data));
 
@@ -82,7 +82,7 @@ export class AppComponent {
   changeUserTypeAdmin(elementRef: any) {
     if (elementRef.addAdminloginEvent) {
     elementRef.addAdminloginEvent.subscribe(
-      (data: string) => {
+      (data: string) => { 
         this.userType = data;
         localStorage.setItem('userType', JSON.stringify(data));
 
