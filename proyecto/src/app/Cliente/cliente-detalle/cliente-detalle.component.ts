@@ -1,8 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { Cliente } from 'src/app/Cliente/cliente';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ClienteService } from 'src/app/services/Cliente/cliente.service';
 import { mergeMap } from 'rxjs';
+import { ClienteService } from 'src/app/Services/Cliente/cliente.service';
+
 
 @Component({
     selector: 'app-cliente-detalle',

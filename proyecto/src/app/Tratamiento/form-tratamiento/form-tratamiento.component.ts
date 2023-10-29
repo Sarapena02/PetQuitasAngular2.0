@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Droga } from 'src/app/Droga/droga';
 import { Mascota } from 'src/app/Mascota/mascota';
 import { DrogaService } from 'src/app/Services/Droga/droga.service';
@@ -9,6 +9,7 @@ import { TratamientoService } from 'src/app/Services/Tratamiento/tratamiento.ser
 import { Veterinario } from 'src/app/Veterinario/veterinario';
 import { Tratamiento } from '../tratamiento';
 import { VeterinarioService } from 'src/app/Services/Veterinario/veterinario.service';
+import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-form-tratamiento',
@@ -19,7 +20,7 @@ export class FormTratamientoComponent {
 
   formTratamiento: FormGroup
 
-  sendTratamiento!: Tratamiento
+  sendTratamiento = {} as Tratamiento;
 
   drogaList!: Droga[]
   mascotaList!: Mascota[]
@@ -30,13 +31,15 @@ export class FormTratamientoComponent {
   selectedVeterinario!: Veterinario
 
   minDate: string
+
+  idVeterinario!: number
   
   constructor(
     private drogaService: DrogaService,
     private mascotaService: MascotaService,
     private VeterinarioService: VeterinarioService,
     private tratamientoService: TratamientoService,
-    router: Router,
+    private router: Router,
     private formBuilder: FormBuilder
   ) { 
     this.formTratamiento = this.formBuilder.group({
@@ -45,8 +48,9 @@ export class FormTratamientoComponent {
       mascota: null,
       veterinario: null
     })
-
     this.minDate = new Date().toISOString().split('T')[0];
+    this.idVeterinario = localStorage.getItem('idVeterinario') ? Number(localStorage.getItem('idVeterinario')) : 0;
+
 
   }
 
@@ -63,20 +67,29 @@ export class FormTratamientoComponent {
         this.mascotaList = data
       }
     )
-    //buscar todos los veterinarios
-    this.VeterinarioService.findAll().subscribe(
+    //asigna el veterinario con sesion iniciada
+    this.VeterinarioService.findById(this.idVeterinario).subscribe(
       (data) => {
-        this.veterinarioList = data
+        this.sendTratamiento.veterinario = data
       }
     )
   }
 
   guardarTratamiento(){
+    
+
     if(this.formTratamiento.valid){
       if(this.selectedDroga.unidadesDisponibles>0){
-        this.sendTratamiento = this.formTratamiento.value as Tratamiento;
-        this.actualizarDroga();
-        this.tratamientoService.addTratamiento(this.sendTratamiento).subscribe();
+        this.sendTratamiento.fecha = this.formTratamiento.get('fecha')?.value;
+      this.sendTratamiento.droga = this.formTratamiento.get('droga')?.value;
+      this.sendTratamiento.mascota = this.formTratamiento.get('mascota')?.value;
+        this.tratamientoService.addTratamiento(this.sendTratamiento).pipe(     
+          switchMap(() => {
+            console.log(this.sendTratamiento);
+            this.actualizarDroga();
+            return this.router.navigate(['/tratamiento/all']);
+          })
+        ).subscribe();
       }
     }
   }

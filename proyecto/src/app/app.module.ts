@@ -11,8 +11,6 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatTableModule} from '@angular/material/table';
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingComponent } from './Landing/landing/landing.component';
@@ -46,6 +44,7 @@ import { TratamientosUltimoMesComponent } from './Admin/infoDashboard/tratamient
 import { VentasTotalesComponent } from './Admin/infoDashboard/ventas-totales/ventas-totales.component';
 import { VeterinariosActivosComponent } from './Admin/infoDashboard/veterinarios-activos/veterinarios-activos.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TratamientosMascotaTableComponent } from './Tratamiento/tratamientos-mascota-table/tratamientos-mascota-table.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +79,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TratamientosUltimoMesComponent,
     VentasTotalesComponent,
     VeterinariosActivosComponent,
-    TratamientoTableComponent
+    TratamientoTableComponent,
+    TratamientosMascotaTableComponent
   ],
   imports: [
     BrowserModule,

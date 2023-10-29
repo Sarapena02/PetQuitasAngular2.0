@@ -8,9 +8,9 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './veterinario-detalle.component.html',
   styleUrls: ['./veterinario-detalle.component.css']
 })
-export class VeterinarioDetalleComponent implements OnInit {
-  @Input() veterinario!: Veterinario;
-  veterinarioId: number = 0; // Variable para almacenar el ID del veterinario
+export class VeterinarioDetalleComponent{
+  @Input() 
+  veterinario!: Veterinario;
 
   constructor(
     private veterinarioService: VeterinarioService,
@@ -20,8 +20,8 @@ export class VeterinarioDetalleComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      this.veterinarioId = Number(params.get('idVeterinario'));
-      this.veterinarioService.findById(this.veterinarioId).subscribe(
+      const id = Number(params.get('id'));
+      this.veterinarioService.findById(id).subscribe(
         (data) => {
           this.veterinario = data;
         }

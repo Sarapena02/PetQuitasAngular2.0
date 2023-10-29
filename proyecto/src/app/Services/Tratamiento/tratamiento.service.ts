@@ -36,4 +36,12 @@ export class TratamientoService {
   findTratamientosXdrogaUltimoMes(): Observable<Tratamiento[]>{
     return this.http.get<any[]>('http://localhost:8090/tratamientos/TratamientosPorMedicamentoEnelUltimoMes');
   }
+
+  getTratamientoXveterinario(idVeterinario: number): Observable<Tratamiento[]>{
+    return this.http.get<any[]>('http://localhost:8090/tratamientos/TratamientosPorVeterinario/' + idVeterinario);
+  }
+
+  getTratamientosMascota(idMascota: number): Observable<Tratamiento[]>{
+    return this.http.get<any[]>('http://localhost:8090/tratamientos/TratamientosPorMascota/' + idMascota);
+  }
 }

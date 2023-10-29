@@ -5,7 +5,7 @@ import { Mascota } from "src/app/Mascota/mascota"
 export interface Tratamiento{
     id:number
     fecha:string
-    veterinario:Veterinario
+    veterinario?:Veterinario
     mascota?:Mascota
     droga?:Droga
     idDroga?:number
