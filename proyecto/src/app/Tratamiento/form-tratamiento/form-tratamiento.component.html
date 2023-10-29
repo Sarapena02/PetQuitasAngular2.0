@@ -6,18 +6,22 @@
     </div>
 
     <div class="form-group">
-    <label for="droga">Medicamento:</label>
-    <select class="form-control" id="droga" name="droga" required formControlName="droga" [(ngModel)]="selectedDroga">
-        <option *ngFor="let droga of drogaList" [ngValue]="droga">{{droga.nombre}}</option>
-    </select>
+        <label for="droga">Medicamento:</label>
+        <input list="drogas" class="form-control" id="droga" name="droga" required formControlName="droga" [(ngModel)]="selectedDroga">
+        <datalist id="drogas">
+            <option *ngFor="let droga of drogaList" [value]="droga.nombre">{{droga.nombre}}</option>
+        </datalist>
     </div>
+    
 
     <div class="form-group">
-    <label for="mascota">Mascota:</label>
-    <select class="form-control" id="mascota" name="mascota" required formControlName="mascota" [(ngModel)]="selectedMascota">
-        <option *ngFor="let mascota of mascotaList" [ngValue]="mascota">{{ mascota.nombre }}</option>
-    </select>
+        <label for="mascota">Mascota:</label>
+        <input list="mascotas" class="form-control" id="mascota" name="mascota" required formControlName="mascota" [(ngModel)]="selectedMascota">
+        <datalist id="mascotas">
+            <option *ngFor="let mascota of mascotaList" [value]="mascota.nombre">{{ mascota.nombre }}</option>
+        </datalist>
     </div>
+    
 
     <button class="btn btn-primary" type="submit" [disabled]="!formTratamiento.valid">Guardar Tratamiento</button>
 

@@ -100,4 +100,6 @@ export class FormTratamientoComponent {
     this.drogaService.update(this.selectedDroga).subscribe();
   }
 
+  
+  
 }
