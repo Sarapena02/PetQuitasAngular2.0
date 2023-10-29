@@ -2,8 +2,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Cliente } from 'src/app/Cliente/cliente';
 import { ActivatedRoute, Router } from '@angular/router';
 import {mergeMap, switchMap } from 'rxjs';
-import { ClienteService } from 'src/app/services/Cliente/cliente.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ClienteService } from 'src/app/Services/Cliente/cliente.service';
 
 
 @Component({
@@ -68,7 +68,7 @@ export class FormEditClienteComponent {
         if(this.clienteForm.valid){            
             this.clienteService.update(this.clienteForm.value).pipe(
                 switchMap(() => {
-                    return this.router.navigate(['/']);
+                    return this.router.navigate(['/clientes/all']);
                 })
             ).subscribe();
         }
