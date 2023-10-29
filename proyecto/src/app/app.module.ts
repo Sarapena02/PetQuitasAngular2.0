@@ -44,6 +44,7 @@ import { TratamientosUltimoMesComponent } from './Admin/infoDashboard/tratamient
 import { VentasTotalesComponent } from './Admin/infoDashboard/ventas-totales/ventas-totales.component';
 import { VeterinariosActivosComponent } from './Admin/infoDashboard/veterinarios-activos/veterinarios-activos.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TratamientosMascotaTableComponent } from './Tratamiento/tratamientos-mascota-table/tratamientos-mascota-table.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TratamientosUltimoMesComponent,
     VentasTotalesComponent,
     VeterinariosActivosComponent,
-    TratamientoTableComponent
+    TratamientoTableComponent,
+    TratamientosMascotaTableComponent
   ],
   imports: [
     BrowserModule,

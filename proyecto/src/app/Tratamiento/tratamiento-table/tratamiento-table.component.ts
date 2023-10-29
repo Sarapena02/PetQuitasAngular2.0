@@ -10,21 +10,19 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class TratamientoTableComponent {
   tratamientoList: Tratamiento[] = [];
-  idVeterinario: number = 0;
+  idVeterinario!: number;
 
   constructor(
     private tratamientoService: TratamientoService,
-    private route: ActivatedRoute
   ) {
-    this.route.params.subscribe(params => {
-      this.idVeterinario = params['idVeterinario'];
-    });
+    this.idVeterinario = localStorage.getItem('idVeterinario') ? Number(localStorage.getItem('idVeterinario')) : 0;
   }
 
-  ngOnInit(): void {
-    this.tratamientoService.findAll().subscribe(data => {
+  ngOnInit(): void {        
+    this.tratamientoService.getTratamientoXveterinario(this.idVeterinario).subscribe(data => {
       // Filtra los tratamientos por el ID del veterinario
-      this.tratamientoList = data.filter(tratamiento => tratamiento.veterinario && tratamiento.veterinario.id === this.idVeterinario);
+      this.tratamientoList = data;
+      console.log(this.tratamientoList);
     });
   }
   agregarTratamiento(nuevoTratamiento: Tratamiento) {

@@ -23,7 +23,6 @@ export class CantidadTratamientosTipoComponent {
 
 
   private initChart() {    
-    console.log(this.drogasList);
     //Se carga el grafico con los datos pasados
     this.chartOptions = {
       chart: {
@@ -49,7 +48,7 @@ export class CantidadTratamientosTipoComponent {
       plotOptions: {
         column: { // Utilizamos 'column' para gráfico de columnas
           dataLabels: {
-            enabled: true, // Habilitar etiquetas de datos
+            enabled: false, // Habilitar etiquetas de datos
             format: '{point.name}: {point.y}', // Formato personalizado
             color: '#000', // Color del texto
             crop: false,

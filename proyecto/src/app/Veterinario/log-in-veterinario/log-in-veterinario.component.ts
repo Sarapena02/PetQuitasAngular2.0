@@ -26,9 +26,10 @@ export class LogInVeterinarioComponent {
         (data: any) => {
           if (data !== null) {
             // Realiza la redirección a la página deseada
-            this.veterinarioLog = data;
+            this.veterinarioLog = data;            
             this.addVeterianriologinEvent.emit('veterinario');
             this.router.navigate(['/veterinario/find/' + data.id]);
+            localStorage.setItem('idVeterinario',data.id);
           } else {
             console.log('La respuesta fue nula o indefinida');
             alert("Cedula o contraseña incorrecta");
