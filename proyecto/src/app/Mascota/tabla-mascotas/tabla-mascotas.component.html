@@ -22,7 +22,7 @@
           <tbody>
             <tr *ngFor="let mascota of mascotasList">
               <ng-container *ngIf="mascota.estado === 'Activo'">
-                <td>{{mascota.nombre}}</td>
+                <td class="nombres">{{mascota.nombre}}</td>
                 <td>{{mascota.raza}}</td>
                 <td>{{mascota.edad}}</td>
                 <td>{{mascota.enfermedad}}</td>
