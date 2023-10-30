@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Tratamiento } from '../tratamiento';
 import { TratamientoService } from 'src/app/Services/Tratamiento/tratamiento.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-tratamientos-mascota-table',
@@ -14,7 +14,8 @@ export class TratamientosMascotaTableComponent {
 
   constructor(
     private tratamientoService: TratamientoService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ){}
 
   ngOnInit(): void {
@@ -26,6 +27,9 @@ export class TratamientosMascotaTableComponent {
       });
     })
 
+  }
+  redirectToFormulario() {
+    this.router.navigate(['/tratamiento/add']);
   }
 
 }

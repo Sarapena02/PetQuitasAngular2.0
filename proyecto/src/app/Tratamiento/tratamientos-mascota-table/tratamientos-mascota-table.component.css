@@ -9,6 +9,24 @@
     margin-top: 60px;
 
 }
+.custom-button-container {
+    text-align: left; /* Alinea el botón a la derecha dentro del contenedor */
+    margin-bottom: 10px; /* Agrega margen en la parte inferior para separar el botón de la tabla */
+}
+
+.custom-button {
+    background-color: #8f7193; /* Mantiene el color de fondo definido en tu hoja de estilo */
+    border: none; /* Elimina el borde del botón */
+    padding: 5px 10px; /* Ajusta el relleno del botón para hacerlo más pequeño */
+    border-radius: 5px; /* Agrega bordes redondeados */
+    font-size: 14px; /* Reduce el tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor al estilo de puntero al pasar el mouse sobre el botón */
+    transition: background-color 0.3s; /* Agrega una transición suave al color de fondo */
+}
+
+.custom-button:hover {
+    background-color: #8f7193; /* Mantiene el color de fondo al pasar el mouse sobre el botón */
+}
 
 /* Contenedor de la tabla */
 .table-container {
