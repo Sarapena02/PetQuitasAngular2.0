@@ -48,6 +48,8 @@ const routes: Routes = [
   { path: 'tratamiento/edit/:id', component: FormEditTratamientoComponent },
   { path: 'tratamiento/find/:id', component: TratamientoDetalleComponent },
   { path: 'mascota/findTratamientos/:id', component: TratamientosMascotaTableComponent},
+  { path: 'cliente/home', component: ClienteDetalleComponent },
+  { path: 'veterinario/home', component: VeterinarioDetalleComponent },
   { path: '**', component: ErrorPageComponent }
 ];
 

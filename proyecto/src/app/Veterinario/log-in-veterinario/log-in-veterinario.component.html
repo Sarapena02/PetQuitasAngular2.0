@@ -1,16 +1,16 @@
 <div class="container">
     <div class="login-container">
-        <form id="login-form-veterinario" class="login-form"(ngSubmit)="validarCedulayContrasenia()" #LoginVeterinarioForm="ngForm">
+        <form id="login-form-veterinario" class="login-form" (ngSubmit)="login(userForm)" #userForm="ngForm">
 
             <h2>Iniciar Sesión</h2>
             <label for="cedula">Cedula:</label>
-            <input type="text" id="cedulaVeterianrio" name="cedula" required [(ngModel)]="cedulaLog" #cedulaInput="ngModel" >
+            <input type="text" id="cedulaVeterianrio" name="cedula" required [(ngModel)]="formUser.cedula" #cedulaInput="ngModel" >
 
             <label for="contraseña">Contraseña:</label>
-            <input type="password" id="contraseña" name="contraseña" required  [(ngModel)]="contraseniaLog" #constraseñaInput="ngModel">
+            <input type="password" id="contraseña" name="contraseña" required  [(ngModel)]="formUser.contrasenia" #constraseñaInput="ngModel">
 
 
-            <button id="btonLoginVet" type="submit" class="login-button" >Ingresar</button>
+            <button id="btonLoginVet" type="submit" class="login-button" [disabled]="!userForm.form.valid">Ingresar</button>
             <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
         </form>
     </div>
