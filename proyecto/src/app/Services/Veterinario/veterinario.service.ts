@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { User } from 'src/app/Model/user';
 import { Veterinario } from 'src/app/Veterinario/veterinario';
 
 @Injectable({
@@ -10,14 +11,11 @@ export class VeterinarioService {
 
   constructor(private http: HttpClient) { }
   
-  LogIn(cedulaLog: string, contrasenaLog: string) {
-    const body = {
-      cedula: cedulaLog,
-      contrasenia: contrasenaLog
-    };
-    console.log(body);
-    
-    return this.http.post('http://localhost:8090/veterinarios/login', body);
+  LogIn(user: User): Observable<string> {
+    return this.http.post('http://localhost:8090/veterinarios/login', user,
+    {
+      responseType: 'text'
+    });
   }
 
   findAll(): Observable<Veterinario[]>{
@@ -47,6 +45,10 @@ export class VeterinarioService {
   
   findAllInactivos(): Observable<number>{
     return this.http.get<number>('http://localhost:8090/veterinarios/cantidad/inactivos');
+  }
+
+  veterinarioHome(): Observable<Veterinario>{
+    return this.http.get<Veterinario>('http://localhost:8090/veterinarios/details');
   }
  
 }
