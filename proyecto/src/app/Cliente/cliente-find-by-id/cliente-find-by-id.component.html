@@ -1,0 +1,56 @@
+<div class="mostrarCliente">
+    <ng-container *ngIf="cliente">
+        <h1 class="info">Información Cliente</h1>
+        <div class="top-section">
+            <div class="client-details">
+                <div class="detail">
+                    <p class="label"><strong>Nombre:</strong></p>
+                    <p class="value">{{cliente.nombre}}</p>
+                </div>
+                <div class="detail">
+                    <p class="label"><strong>Celular:</strong></p>
+                    <p class="value">{{cliente.celular}}</p>
+                </div>
+                <div class="detail">
+                    <p class="label"><strong>Correo:</strong></p>
+                    <p class="value">{{cliente.correo}}</p>
+                </div>
+                <div class="detail">
+                    <p class="label"><strong>Cedula:</strong></p>
+                    <p class="value">{{cliente.cedula}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-section">
+            <div class="mascotas-list" *ngIf="cliente.mascotas && cliente.mascotas.length > 0">
+                <h2 class="subtitulo">Mascotas:</h2>
+                <ul class="mascota-items">
+                    <li *ngFor="let mascota of cliente.mascotas">
+                        <div class="mascota-item">
+                            <img class="pet-image" [src]="mascota.imagen" alt="Imagen de la mascota">
+                                <div class="pet-details">
+                                    <h2 class="nombreMascota">{{mascota.nombre}}</h2>
+
+                                    <div class="detail">
+                                        <p class="label"><strong>Raza:</strong> <span>{{mascota.raza}}</span></p>
+                                    </div>
+
+                                    <div class="detail">
+                                        <p class="label"><strong>Edad:</strong> <span>{{mascota.edad}}</span></p>
+                                    </div>
+
+                                    <div class="detail">
+                                        <p class="label"><strong>Enfermedad:</strong> <span>{{mascota.enfermedad}}</span></p>
+                                    </div>
+
+                                    <div class="detail">
+                                        <p class="label"><strong>Estado:</strong> <span>{{mascota.enfermedad}}</span></p>
+                                    </div>
+                               </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+          </div>
+    </ng-container>
+</div>

@@ -46,6 +46,7 @@ import { VeterinariosActivosComponent } from './Admin/infoDashboard/veterinarios
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TratamientosMascotaTableComponent } from './Tratamiento/tratamientos-mascota-table/tratamientos-mascota-table.component';
 import { AuthInterceptor } from './helpers/auth.interceptor';
+import { ClienteFindByIdComponent } from './Cliente/cliente-find-by-id/cliente-find-by-id.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +82,8 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
     VentasTotalesComponent,
     VeterinariosActivosComponent,
     TratamientoTableComponent,
-    TratamientosMascotaTableComponent
+    TratamientosMascotaTableComponent,
+    ClienteFindByIdComponent
   ],
   imports: [
     BrowserModule,

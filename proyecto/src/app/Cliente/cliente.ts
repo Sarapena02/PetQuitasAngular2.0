@@ -6,5 +6,6 @@ export interface Cliente{
     celular:string
     correo:string
     cedula:string
+    estado:string
     mascotas?: Mascota[]
 }

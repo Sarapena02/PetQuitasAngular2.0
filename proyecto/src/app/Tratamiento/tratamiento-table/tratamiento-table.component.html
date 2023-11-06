@@ -17,11 +17,6 @@
                     <td>{{tratamiento.mascota?.nombre}}</td>
                     <td>{{tratamiento.droga?.nombre}}</td>
                     <td>
-                        <a [routerLink]="['/tratamiento/find', tratamiento.id]">
-                            <button class="btn btn-primary">
-                                <i class="bi bi-eye"></i>
-                            </button>
-                        </a>
                         <button class="btn btn-primary" (click)="eliminarTratamiento(tratamiento)">
                             <i class="bi bi-trash"></i>
                         </button>

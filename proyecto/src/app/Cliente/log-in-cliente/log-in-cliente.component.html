@@ -1,10 +1,11 @@
 <div class="container">
     <div class="login-container">
-      <form id="login-form-Cliente" class="login-form" (ngSubmit)="validarCedula()" #LoginClienteForm ="ngForm">
+      <form id="login-form-Cliente" class="login-form" (ngSubmit)="login(userForm)" #userForm ="ngForm">
         <h2>Iniciar Sesión</h2>
         <label for="cedula">Cedula:</label>
-        <input type="text" id="cedulaCliente" name="cedula" required [(ngModel)]="cedulaLog" #cedulaInput="ngModel">
-        <button type="submit" id="loginCliente" class="login-button" [disabled]="!LoginClienteForm.form.valid">Ingresar</button>
+        <input type="text" id="cedulaCliente" name="cedula" required [(ngModel)]="formUser.cedula" #cedulaInput="ngModel">
+        <button type="submit" id="loginCliente" class="login-button" [disabled]="!userForm.form.valid">Ingresar</button>
+        <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
       </form>
     </div>
   </div>

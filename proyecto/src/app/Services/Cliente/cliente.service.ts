@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 import { Cliente } from 'src/app/Cliente/cliente';
 import { Mascota } from 'src/app/Mascota/mascota';
+import { User } from 'src/app/Model/user';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,10 @@ export class ClienteService {
   constructor(private http: HttpClient) 
   { }
 
-  LogIn(cedulaLog: string){
-    return this.http.post('http://localhost:8090/clientes/login', cedulaLog)
+  LogIn(user: User): Observable<string>{
+    return this.http.post('http://localhost:8090/clientes/login', user,{
+      responseType: 'text'
+    })
   }
 
   findAll(): Observable<Cliente[]>{
@@ -47,6 +50,10 @@ findMascotas(id:number):Observable<Mascota[]>{
 
 findByCedula(cedula:string):Observable<Cliente>{
   return this.http.get<Cliente>(`http://localhost:8090/clientes/cedula/` + cedula);
+}
+
+clienteHome():Observable<Cliente>{
+  return this.http.get<Cliente>("http://localhost:8090/clientes/details");
 }
   
 
