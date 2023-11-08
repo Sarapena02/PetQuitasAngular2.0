@@ -1,1 +1,29 @@
-<p>form-edit-tratamiento works!</p>
+<form class="small-form" [formGroup]="formTratamiento" (ngSubmit)="editarTratamiento(formTratamiento.value)">
+    <div class="form-group">
+      <label for="fecha">Fecha:</label>
+      <input type="date" class="form-control" id="fecha" name="fecha" required formControlName="fecha" [min]="minDate">
+    </div>
+  
+    <div class="form-group">
+      <label for="droga">Medicamento:</label>
+      <input list="drogas" class="form-control" id="droga" name="droga" required formControlName="droga">
+      <datalist id="drogas">
+        <option *ngFor="let droga of drogaList" [ngValue]="droga">{{droga.nombre}}</option>
+      </datalist>
+    </div>
+  
+    <div class="form-group">
+      <label for="mascota">Mascota:</label>
+      <input list="mascotas" class="form-control" id="mascota" name="mascota" required formControlName="mascota">
+      <datalist id="mascotas">
+        <option *ngFor="let mascota of mascotaList" [ngValue]="mascota">{{ mascota.nombre }}</option>
+      </datalist>
+    </div>
+  
+    <button class="btn btn-primary" type="submit">Guardar Tratamiento</button>
+  
+    <div *ngIf="selectedDroga && selectedDroga.unidadesDisponibles === 0" class="error-message">
+        No hay unidades disponibles de esta droga.
+      </div>
+  </form>
+  

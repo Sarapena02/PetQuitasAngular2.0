@@ -24,6 +24,10 @@ export class TratamientoService {
     return this.http.post<Tratamiento>('http://localhost:8090/tratamientos/agregar', tratamiento);
   }
 
+  update(tratamiento: Tratamiento): Observable<Tratamiento>{
+    return this.http.put<Tratamiento>('http://localhost:8090/tratamientos/update',tratamiento);
+  }
+
   deleteById(id: number): Observable<Tratamiento>{
     return this.http.delete<Tratamiento>('http://localhost:8090/tratamientos/delete/' + id);
   }
