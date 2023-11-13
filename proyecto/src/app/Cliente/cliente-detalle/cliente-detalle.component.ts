@@ -22,22 +22,6 @@ export class ClienteDetalleComponent {
     ){}
 
     ngOnInit(): void {
-        /*//primero busca el cliente y despues sus mascotas
-        this.route.paramMap.subscribe(params => {
-            const id = Number(params.get('id')); 
-            this.clienteService.findById(id).pipe(
-                mergeMap(
-                    (data) => {
-                        this.cliente = data;
-                        return this.clienteService.findMascotas(this.cliente.id);
-                    }
-                )
-            ).subscribe(
-                (data) => {
-                    this.cliente.mascotas = data
-                }
-            )
-        })*/
         this.clienteService.clienteHome().pipe(
             mergeMap(
                 (data) => {

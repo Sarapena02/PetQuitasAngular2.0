@@ -1,0 +1,28 @@
+<body>
+<div class="mostrarTratamiento">
+    <ng-container *ngIf="listaTratamientos.length > 0">
+      <h1 class="tituloInfo">Información de tratamientos</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Medicamento</th>
+            <th>Nombre de Mascota</th>
+            <th>Nombre de Veterinario</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tratamiento of listaTratamientos">
+            <td>{{ tratamiento.fecha }}</td>
+            <td>{{ tratamiento.droga?.nombre }}</td>
+            <td>{{ tratamiento.mascota?.nombre }}</td>
+            <td>{{ tratamiento.veterinario?.nombre }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </ng-container>
+    <ng-container *ngIf="listaTratamientos.length === 0">
+      <p>No hay tratamientos disponibles.</p>
+    </ng-container>
+  </div>
+  </body>

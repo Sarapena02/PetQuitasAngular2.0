@@ -24,6 +24,7 @@ import { ClienteTablaComponent } from './Cliente/tabla-cliente/tabla-cliente.com
 import { TratamientoTableComponent } from './Tratamiento/tratamiento-table/tratamiento-table.component';
 import { TratamientosMascotaTableComponent } from './Tratamiento/tratamientos-mascota-table/tratamientos-mascota-table.component';
 import { ClienteFindByIdComponent } from './Cliente/cliente-find-by-id/cliente-find-by-id.component';
+import { TratamientosHistorialComponent } from './Tratamiento/tratamientos-historial/tratamientos-historial.component';
 
 const routes: Routes = [
   { path: 'mascota/find/:id', component: MascotaDetalleComponent },
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'cliente/add', component: ClienteFormComponent },
   { path: 'cliente/edit/:id', component: FormEditClienteComponent },
   { path: 'clientes/all', component: ClienteTablaComponent },
+  
   { path: 'cliente/find/:id', component: ClienteFindByIdComponent },
   { path: 'home', component: LandingComponent },
   { path: '', pathMatch: 'full', redirectTo: 'home' },  
@@ -49,10 +51,12 @@ const routes: Routes = [
   { path: 'tratamiento/edit/:id', component: FormEditTratamientoComponent },
   { path: 'tratamiento/find/:id', component: TratamientoDetalleComponent },
   { path: 'mascota/findTratamientos/:id', component: TratamientosMascotaTableComponent},
+  { path: 'clientes/:clienteId/mascotas/:mascotaId/tratamientos', component: TratamientosHistorialComponent },
   { path: 'cliente/home', component: ClienteDetalleComponent },
   { path: 'veterinario/home', component: VeterinarioDetalleComponent },
   { path: 'cliente/home', component: ClienteDetalleComponent },
   { path: '**', component: ErrorPageComponent }
+
 ];
 
 @NgModule({

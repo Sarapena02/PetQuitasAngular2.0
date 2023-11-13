@@ -1,0 +1,49 @@
+body {
+    padding-bottom: 250px;
+    overflow-x: hidden; /* Oculta la barra de desplazamiento horizontal */
+    overflow-y: auto; /* Activa la barra de desplazamiento vertical si es necesario */
+}
+
+.mostrarTratamiento {
+    max-width: 800px;
+    margin: 70px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+}
+
+.mostrarTratamiento:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.tituloInfo {
+    text-align: center;
+    color: white;
+    padding: 25px 0;
+    background-color: #8F7193;
+    margin: 0;
+    letter-spacing: 1.5px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
