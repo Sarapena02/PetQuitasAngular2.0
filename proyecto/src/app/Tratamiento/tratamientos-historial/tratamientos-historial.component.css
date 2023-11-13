@@ -2,8 +2,11 @@ body {
     padding-bottom: 250px;
     overflow-x: hidden; /* Oculta la barra de desplazamiento horizontal */
     overflow-y: auto; /* Activa la barra de desplazamiento vertical si es necesario */
+    align-items: center;
+    justify-content: center;
 }
 
+  
 .mostrarTratamiento {
     max-width: 800px;
     margin: 70px auto;

@@ -1,22 +1,20 @@
 <body>
-<div class="mostrarTratamiento">
+  <div class="mostrarTratamiento">
     <ng-container *ngIf="listaTratamientos.length > 0">
-      <h1 class="tituloInfo">Información de tratamientos</h1>
+      <h1 class="tituloInfo">Historial de tratamientos de {{ nombreMascota }}</h1>
       <table>
         <thead>
           <tr>
             <th>Fecha</th>
             <th>Medicamento</th>
-            <th>Nombre de Mascota</th>
             <th>Nombre de Veterinario</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let tratamiento of listaTratamientos">
-            <td>{{ tratamiento.fecha }}</td>
-            <td>{{ tratamiento.droga?.nombre }}</td>
-            <td>{{ tratamiento.mascota?.nombre }}</td>
-            <td>{{ tratamiento.veterinario?.nombre }}</td>
+          <tr *ngFor="let tratamientoItem of listaTratamientos">
+            <td>{{ tratamientoItem.fecha }}</td>
+            <td>{{ tratamientoItem.droga?.nombre }}</td>   
+            <td>{{ tratamientoItem.veterinario?.nombre }}</td>
           </tr>
         </tbody>
       </table>
@@ -25,4 +23,4 @@
       <p>No hay tratamientos disponibles.</p>
     </ng-container>
   </div>
-  </body>
+</body>
