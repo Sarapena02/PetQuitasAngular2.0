@@ -34,4 +34,8 @@ export class DrogaService {
   update(droga: Droga){
     return this.http.put("http://localhost:8090/drogas/update/" + droga.id, droga );
   }
+
+  findByName(name: string): Observable<Droga>{
+    return this.http.get<Droga>("http://localhost:8090/drogas/findByName/" + name);
+  }
 }

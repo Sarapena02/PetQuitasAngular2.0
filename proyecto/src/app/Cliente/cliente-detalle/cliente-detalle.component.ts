@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Cliente } from 'src/app/Cliente/cliente';
 import { ActivatedRoute, Router } from '@angular/router';
 import { mergeMap } from 'rxjs';
@@ -11,7 +11,6 @@ import { ClienteService } from 'src/app/Services/Cliente/cliente.service';
     styleUrls: ['./cliente-detalle.component.css']
 })
 export class ClienteDetalleComponent {
-
 
     @Input()
     cliente!: Cliente;

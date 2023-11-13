@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Mascota } from '../mascota';
-import { MascotaService } from 'src/app/services/mascota/mascota.service';
+import { MascotaService } from '../../Services/Mascota/mascota.service';
 
 @Component({
   selector: 'app-tabla-mascotas',
@@ -8,11 +8,13 @@ import { MascotaService } from 'src/app/services/mascota/mascota.service';
   styleUrls: ['./tabla-mascotas.component.css']
 })
 export class TablaMascotasComponent {
-
   //atributos
   mascotasList!: Mascota[];
 
   mascotaEditar!: Mascota;
+
+  filtroNombre: string = '';
+
 
   //constructor
   constructor(
@@ -28,7 +30,20 @@ export class TablaMascotasComponent {
     )
   }
 
+
   //metodos
+  buscarMascotas() {
+    if (this.filtroNombre) {
+      this.mascotasList = this.mascotasList.filter(mascota => {
+        return mascota.nombre.toLowerCase().includes(this.filtroNombre.toLowerCase());
+      });
+    } else {
+      // Si el campo de búsqueda está vacío, restaura la lista original.
+      this.mascotaService.findAll().subscribe(
+        data => this.mascotasList = data
+      );
+    }
+  }
 
   //busca el id de la mascota y la elimina
   eliminarMascota(mascota: Mascota){

@@ -12,8 +12,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ClienteFormComponent {
 
-  @Output()
-  addClienteEvent = new EventEmitter<Cliente>();
 
   @Output()
   ocultarFormularioEvent = new EventEmitter<boolean>();
@@ -34,6 +32,9 @@ export class ClienteFormComponent {
       cedula: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       imagen: ''
     });
+  }
+
+  ngOnInit(): void {
   }
 
   guardarCliente() {

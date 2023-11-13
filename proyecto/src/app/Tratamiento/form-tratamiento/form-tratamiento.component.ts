@@ -4,12 +4,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Droga } from 'src/app/Droga/droga';
 import { Mascota } from 'src/app/Mascota/mascota';
 import { DrogaService } from 'src/app/Services/Droga/droga.service';
-import { MascotaService } from 'src/app/services/mascota/mascota.service';
+import { MascotaService } from '../../Services/Mascota/mascota.service';
 import { TratamientoService } from 'src/app/Services/Tratamiento/tratamiento.service';
 import { Veterinario } from 'src/app/Veterinario/veterinario';
 import { Tratamiento } from '../tratamiento';
 import { VeterinarioService } from 'src/app/Services/Veterinario/veterinario.service';
-import { switchMap } from 'rxjs';
+import { EMPTY, mergeMap, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-form-tratamiento',
@@ -75,22 +75,39 @@ export class FormTratamientoComponent {
     )
   }
 
-  guardarTratamiento(){
-    
 
-    if(this.formTratamiento.valid){
-      if(this.selectedDroga.unidadesDisponibles>0){
-        this.sendTratamiento.fecha = this.formTratamiento.get('fecha')?.value;
-      this.sendTratamiento.droga = this.formTratamiento.get('droga')?.value;
-      this.sendTratamiento.mascota = this.formTratamiento.get('mascota')?.value;
-        this.tratamientoService.addTratamiento(this.sendTratamiento).pipe(     
-          switchMap(() => {
-            console.log(this.sendTratamiento);
+  guardarTratamiento(){
+    if (this.formTratamiento.valid) {      
+      // Se busca la droga que se seleccionó en el formulario
+      this.drogaService.findByName(this.formTratamiento.get('droga')?.value).pipe(
+        mergeMap((data: Droga) => {
+          // Verifica si la propiedad 'unidadesDisponibles' es mayor que 0
+            this.sendTratamiento.droga = data;
+            this.selectedDroga = data
+            console.log(this.selectedDroga);
+            
+          if (data.unidadesDisponibles > 0) {
             this.actualizarDroga();
-            return this.router.navigate(['/tratamiento/all']);
-          })
-        ).subscribe();
-      }
+            // Se busca la mascota que se seleccionó en el formulario
+            return this.mascotaService.findByName(this.formTratamiento.get('mascota')?.value);
+          } else {
+            // Realiza alguna acción en caso de que 'unidades' sea 0 o menos
+            return EMPTY; // Devuelve un observable vacío para interrumpir la cadena de operadores
+          }
+        })
+      ).pipe(
+        mergeMap((data: Mascota) => {
+          this.sendTratamiento.mascota = data;
+          this.sendTratamiento.fecha = this.formTratamiento.get('fecha')?.value;
+          // Se añade el tratamiento
+          return this.tratamientoService.addTratamiento(this.sendTratamiento);
+        })
+      ).subscribe(
+        () => {
+          // Redirecciona a la página de todos los tratamientos
+          this.router.navigate(['/tratamiento/all']);
+        }
+      );
     }
   }
 
