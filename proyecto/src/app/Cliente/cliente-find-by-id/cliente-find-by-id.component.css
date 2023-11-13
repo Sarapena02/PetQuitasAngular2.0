@@ -1,0 +1,143 @@
+/* Estilos para el contenedor principal */
+h1 {
+    text-align: center;
+    color: #333333;
+    padding: 25px 0;
+    background-color: #dfcae1;
+    margin: 0;
+    letter-spacing: 1.5px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el contenedor de cliente */
+.mostrarCliente {
+    max-width: 800px;
+    margin: 70px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #e5dde6;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.mostrarCliente:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+/* Estilos para la sección superior */
+.top-section {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px dashed #dfcae1;
+    padding: 30px;
+    text-align: center; 
+}
+.top-section .info-item p {
+    font-size: 18px;
+    color: #747474;
+    margin: 0;
+    font-weight: bold;
+}
+
+
+
+/* Estilos para la imagen de la mascota */
+.pet-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #dfcae1;
+    margin-right: 25px;
+    transition: border 0.3s ease;
+}
+
+.mostrarCliente:hover .pet-image {
+    border: 6px solid #c0a0c3;
+}
+
+/* Estilos para los detalles de la mascota */
+.pet-details {
+    flex-grow: 1;
+}
+
+.pet-details p {
+    font-size: 20px;
+    color: #333333;
+    margin: 8px 0;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+}
+
+/* Estilos para la sección inferior */
+.bottom-section {
+    padding: 20px 30px;
+    border-top: 2px dashed #dfcae1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    transition: border-color 0.3s ease;
+
+}
+
+.bottom-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bottom-section li{
+    display: inline-block;
+}
+
+/* Estilos para los elementos de la sección inferior */
+.bottom-section p,
+.bottom-section p.label {
+    font-size: 18px;
+    color: var(--text-main);
+    margin: 12px 0;
+    padding-left: 15px;
+    transition: border-color 0.3s ease;
+    flex-grow: 1; /* Para que los elementos ocupen todo el espacio disponible */
+    max-width: 45%; /* Ajusta el ancho máximo de los elementos según tu preferencia */
+    text-align: center;
+}
+
+/* Estilos para las etiquetas de la sección inferior */
+.bottom-section p.label {
+    border-left: 5px solid #dfcae1;
+}
+
+.mostrarCliente:hover .bottom-section p {
+    border-color: #c0a0c3;
+}
+
+/* Estilos para los detalles individuales */
+.detail {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+/* Estilos para las etiquetas de detalles */
+.label {
+    flex: 0 0 100px;
+    margin-right: 10px;
+    text-align: right;
+    color: #c0a0c3;
+}
+
+/* Estilos para los valores de detalles */  
+.value {
+    flex-grow: 1;
+    border-bottom: 1px solid #c0a0c3;
+    padding-bottom: 2px;
+    color: #747474;
+    text-align: left; /* Alinea el texto a la izquierda */
+    padding-left: 0;
+}

@@ -22,19 +22,9 @@ export class TratamientoTableComponent {
     this.tratamientoService.getTratamientoXveterinario(this.idVeterinario).subscribe(data => {
       // Filtra los tratamientos por el ID del veterinario
       this.tratamientoList = data;
-      console.log(this.tratamientoList);
     });
   }
-  agregarTratamiento(nuevoTratamiento: Tratamiento) {
-    this.tratamientoService.addTratamiento(nuevoTratamiento).subscribe(
-        (tratamientoAgregado) => {
-            this.tratamientoList.push(tratamientoAgregado); // Agrega el tratamiento a la lista
-        },
-        (error) => {
-            console.error('Error al agregar tratamiento:', error);
-        }
-    );
-}
+
 eliminarTratamiento(tratamiento: Tratamiento) {
   this.tratamientoService.deleteById(tratamiento.id).subscribe(
       () => {

@@ -19,19 +19,10 @@ export class VeterinarioDetalleComponent{
   ) {}
 
   ngOnInit(): void {
-    /*
-    this.route.paramMap.subscribe(params => {
-      const id = Number(params.get('id'));
-      this.veterinarioService.findById(id).subscribe(
-        (data) => {
-          this.veterinario = data;
-        }
-      );
-    });*/
-
     this.veterinarioService.veterinarioHome().subscribe(
       (data) => {
         this.veterinario = data;
+        localStorage.setItem('idVeterinario',data.id.toString());
       }
     )
   }

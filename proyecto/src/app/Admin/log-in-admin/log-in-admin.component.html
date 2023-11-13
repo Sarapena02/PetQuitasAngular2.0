@@ -1,14 +1,15 @@
 <div class="container">
     <div class="login-container">
-        <form id="login-form-admin" class="login-form" (ngSubmit)="validarAdmin()" #LoginAdminForm ="ngForm">
+        <form id="login-form-admin" class="login-form" (ngSubmit)="login(userForm)" #userForm ="ngForm">
 
             <h2>Iniciar Sesión</h2>
             <label for="user">Cedula:</label>
-            <input type="text" id="userAdmin" name="user" required [(ngModel)]="usuario" #cedulaInput="ngModel" >
+            <input type="text" id="userAdmin" name="user" required [(ngModel)]="formUser.cedula" #cedulaInput="ngModel" >
 
             <label for="contraseña">Contraseña:</label>
-            <input type="password" id="password" name="contraseña" required  [(ngModel)]="password" #constraseñaInput="ngModel">
-            <button type="submit" id="btonIngresarAdmin" class="login-button" [disabled]="!LoginAdminForm.form.valid">Ingresar</button>
+            <input type="password" id="password" name="contraseña" required  [(ngModel)]="formUser.contrasenia" #constraseñaInput="ngModel">
+            <button type="submit" id="btonIngresarAdmin" class="login-button" [disabled]="!userForm.form.valid">Ingresar</button>
+            <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
         </form>
     </div>
 </div>

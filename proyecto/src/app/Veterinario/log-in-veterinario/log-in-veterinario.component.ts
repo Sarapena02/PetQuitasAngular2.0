@@ -39,6 +39,7 @@ export class LogInVeterinarioComponent {
           if (data !== null) {
             // Realiza la redirección a la página deseada
             localStorage.setItem('token', String(data));
+            this.addVeterianriologinEvent.emit("veterinario");
             this.router.navigate(['/veterinario/home']);
           } else {
             this.errorMessage = 'Cedula o contraseña incorrecta';
