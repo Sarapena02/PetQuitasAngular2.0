@@ -60,7 +60,7 @@ export class FormEditVeterinarioComponent {
   }
 
   editarVeterinario(form:any){
-    //Primero realiza el update y una vez que el update se haya realizo entonces redirecciona a la tabla de mascotas
+    //Primero realiza el update y una vez que el update se haya realizo entonces redirecciona a la tabla de veterinarios
     if(this.veterinarioForm.valid){
       this.veterinarioService.update(this.veterinarioForm.value).pipe(
         switchMap(() => {

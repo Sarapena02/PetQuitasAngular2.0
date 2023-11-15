@@ -1,6 +1,9 @@
 <div class="container">
     <div class="row">
-        
+      <div class="form-group">
+        <input id ="barraBusqueda" type="text" class="form-control" [(ngModel)]="filtroNombre" placeholder="Buscar por nombre" (keyup.enter)="buscarMascotas()">
+        <button id="btnBuscar"class="btn btn-primary search-button" (click)="buscarMascotas()">Buscar</button>
+      </div>
         <table id="mascotas-table" class="table table-striped table-bordered">
           <thead>
             <tr>
@@ -14,7 +17,7 @@
           <tbody>
             <tr *ngFor="let mascota of mascotasList">
               <ng-container *ngIf="mascota.estado === 'Activo'">
-                <td>{{mascota.nombre}}</td>
+                <td class="nombres">{{mascota.nombre}}</td>
                 <td>{{mascota.raza}}</td>
                 <td>{{mascota.edad}}</td>
                 <td>{{mascota.enfermedad}}</td>

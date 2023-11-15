@@ -3,6 +3,7 @@ import { ClienteService } from 'src/app/Services/Cliente/cliente.service';
 import { Cliente } from 'src/app/Cliente/cliente';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { User } from 'src/app/Model/user';
 
 @Component({
   selector: 'app-log-in-cliente',
@@ -14,27 +15,29 @@ export class LogInClienteComponent {
   @Output()
   addClienteloginEvent = new EventEmitter<String>();
 
-  cedulaLog! : string;
-  clienteLog!: Cliente;
+  errorMessage: string = '';
 
-  constructor(private ClienteService:ClienteService,
+  constructor(
+    private ClienteService:ClienteService,
     private router: Router,
-    private route: ActivatedRoute
-    ) {}
+    ) {
+    }
+
+    formUser: User = {
+      cedula: '',
+      contrasenia: '123'
+    };
     
-  validarCedula() {
-    this.ClienteService.LogIn(this.cedulaLog).subscribe(
+    login(form: any) {
+    this.ClienteService.LogIn(this.formUser).subscribe(
       (data: any) => {        
         if (data !== null) {
-          //Obtiene el id del cliente
-          this.clienteLog = data;
           // Realiza la redirección a la página deseada
-          const redirecTo = '/cliente/find/' + this.clienteLog.id;
+          localStorage.setItem('token', String(data));
           this.addClienteloginEvent.emit('cliente');
-          this.router.navigate([redirecTo]);
+          this.router.navigate(['cliente/home']);
         } else {
-          console.log('La respuesta fue nula o indefinida');
-          alert("Cedula incorrecta");
+          this.errorMessage = 'Cedula incorrecta';
         }
       }
       

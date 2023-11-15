@@ -7,15 +7,17 @@
               <th scope="col">Celular</th>
               <th scope="col">Correo</th>
               <th scope="col">Cedula</th>
+              <th scope="col">Estado</th>
               <th scope="col">Opciones</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let cliente of clientesList">
-                <td>{{cliente.nombre}}</td>
+                <td class="nombres">{{cliente.nombre}}</td>
                 <td>{{cliente.celular}}</td>
                 <td>{{cliente.correo}}</td>
                 <td>{{cliente.cedula}}</td>
+                <td>{{cliente.estado}}</td>
                 <td>
                   <a [routerLink]="['/cliente/find', cliente.id]">
                     <button class="btn btn-primary">

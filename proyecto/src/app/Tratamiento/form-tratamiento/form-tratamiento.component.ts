@@ -69,7 +69,7 @@ export class FormTratamientoComponent {
     )
     //asigna el veterinario con sesion iniciada
     this.VeterinarioService.findById(this.idVeterinario).subscribe(
-      (data) => {
+      (data) => {        
         this.sendTratamiento.veterinario = data
       }
     )
@@ -83,9 +83,7 @@ export class FormTratamientoComponent {
         mergeMap((data: Droga) => {
           // Verifica si la propiedad 'unidadesDisponibles' es mayor que 0
             this.sendTratamiento.droga = data;
-            this.selectedDroga = data
-            console.log(this.selectedDroga);
-            
+            this.selectedDroga = data            
           if (data.unidadesDisponibles > 0) {
             this.actualizarDroga();
             // Se busca la mascota que se seleccionó en el formulario
