@@ -1,0 +1,10 @@
+Administrador:
+Usuario: admin
+Password: admin
+
+Veterinario:
+Usuario: 12345678910
+Password: walter1
+
+Cliente
+Usuario: 1234567895
